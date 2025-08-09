@@ -865,5 +865,11 @@ color: var(--topi-yellow) !important; }
 }
 
 
-
+@media (max-width: 768px) {
+  .download-button,
+  .download-button:link,
+  .download-button:visited {
+    color: #0d0f14 !important; /* texte noir */
+  }
+}
 
