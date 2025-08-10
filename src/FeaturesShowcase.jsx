@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import Maths from './assets/icone1.png';
 import Philo from './assets/Philo.png';
-import SVT from './assets/SVT.png';
+import SVT from './assets/Booste.png';
 
 const FEATURES_BY_LANG = {
   fr: [
