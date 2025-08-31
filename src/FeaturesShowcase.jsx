@@ -7,22 +7,22 @@ import SVT from './assets/Booste.png';
 const FEATURES_BY_LANG = {
   fr: [
     {
-      title: "Le Duolingo du Bac",
-      text: "Révise en t’amusant grâce à des parcours interactifs, des points et des niveaux. Addictif, motivant et pensé pour cartonner au Bac et au Brevet.",
+      title: "Bientot Disponible",
+      text: "Bientot Disponible",
       img: Maths,
       color: "#fccc2d",
       reverse: false
     },
     {
-      title: "Ton parcours IA sur-mesure",
-      text: "Prends une photo de ton cours et laisse l’IA créer un parcours d’exercices et de leçons adaptés à ton niveau — comme Duolingo, mais pour tes chapitres.",
+      title:"Bientot Disponible",
+      text: "Bientot Disponible",
       img: Philo,
       color: "#58cc02",
       reverse: true
     },
     {
-      title: "Booste tes notes",
-      text: "La méthode la plus rapide et efficace pour réviser : résumés ciblés, quiz intelligents et suivi précis pour viser la meilleure note possible.",
+      title: "Bientot Disponible",
+      text: "Bientot Disponible",
       img: SVT,
       color: "#7aa2ff",
       reverse: false
@@ -30,22 +30,22 @@ const FEATURES_BY_LANG = {
   ],
   en: [
     {
-      title: "The Duolingo for the Bac",
-      text: "Study while having fun with interactive paths, points, and levels. Addictive, motivating, and designed to help you excel in the French Bac and Brevet.",
+      title: "Bientot Disponible",
+      text: "Bientot Disponible",
       img: Maths,
       color: "#fccc2d",
       reverse: false
     },
     {
-      title: "Your AI-powered custom path",
-      text: "Take a photo of your lesson and let AI create a tailored set of exercises and lessons for your level — just like Duolingo, but for your subjects.",
+      title: "Bientot Disponible",
+      text: "Bientot Disponible",
       img: Philo,
       color: "#58cc02",
       reverse: true
     },
     {
-      title: "Boost your grades",
-      text: "The fastest and most effective way to study: targeted summaries, smart quizzes, and detailed tracking to aim for the best possible grade.",
+      title: "Bientot Disponible",
+      text: "Bientot Disponible",
       img: SVT,
       color: "#7aa2ff",
       reverse: false
