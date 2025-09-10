@@ -32,7 +32,8 @@ const TEXTS = {
       "Aide",
       "Contact",
       "Confidentialité",
-      "Mentions légales"
+      "Mentions légales",
+      "Conditions d'utilisation"
     ]
   },
   en: {
@@ -51,7 +52,8 @@ const TEXTS = {
       "Help",
       "Contact",
       "Privacy",
-      "Legal"
+      "Legal",
+      "Terms"
     ]
   }
 };
