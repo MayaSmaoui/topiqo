@@ -206,7 +206,7 @@ function App() {
     { label: t.links[4], to: "/contact" },
     { label: t.links[5], to: "/privacy" },
     { label: t.links[6], to: "/legal" },
-    { label: t.links[6], to: "/terms" }
+    { label: t.links[7], to: "/terms" }
   ].map((item, i) => (
     <Link key={i} to={item.to} onClick={goTop}>
       {item.label}
