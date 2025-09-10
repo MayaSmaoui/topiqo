@@ -1,3 +1,4 @@
+// src/pages/Privacy.jsx
 import React from "react";
 
 export default function Privacy({ lang = "fr" }) {
@@ -6,211 +7,164 @@ export default function Privacy({ lang = "fr" }) {
       brand: "Topiqo",
       title: "Politique de confidentialité",
       subtitle:
-        "Comment nous collectons, utilisons et protégeons tes données (RGPD/CNIL).",
-      updated: "Dernière mise à jour : 9 août 2025",
-      effective: "Date d’entrée en vigueur : 9 août 2025",
+        "Comment nous collectons, utilisons et protégeons vos données personnelles.",
+      updated: "Dernière mise à jour : 10 septembre 2025",
+      effective: "Date d’entrée en vigueur : 10 septembre 2025",
       toc: "Sommaire",
       sections: [
         {
-          id: "overview",
-          h: "Résumé",
-          body: (
-            <>
-              <p>
-                Cette politique explique quelles données nous traitons, pourquoi, pendant combien de temps,
-                avec qui nous les partageons et quels sont tes droits. Elle s’applique au site et à l’app
-                <strong> Topiqo</strong>.
-              </p>
-            </>
-          ),
-        },
-        {
-          id: "controller",
-          h: "Responsable du traitement",
-          body: (
-            <>
-              <p>
-                <strong>Topiqo SAS</strong> — 10 rue Exemple, 75000 Paris, France.
-                <br />
-                Email :{" "}
-                <a className="link" href="mailto:privacy@topiqo.com">privacy@topiqo.com</a>
-              </p>
-            </>
-          ),
-        },
-        {
-          id: "dpo",
-          h: "Délégué à la Protection des Données (DPO)",
+          id: "intro",
+          h: "Introduction",
           body: (
             <p>
-              Contact DPO :{" "}
-              <a className="link" href="mailto:dpo@topiqo.com">dpo@topiqo.com</a>. Tu peux contacter le DPO pour toute
-              question relative à tes droits ou à nos traitements.
+              Topiqo (« nous », « notre », « nos ») valorise votre vie privée et
+              s’engage à protéger vos informations personnelles. Cette Politique
+              explique comment nous collectons, utilisons, stockons et partageons
+              vos informations lorsque vous utilisez nos applications mobiles,
+              notre site web et nos services associés (collectivement, le «
+              Service »).
             </p>
+          ),
+        },
+        {
+          id: "eligibility",
+          h: "1. Éligibilité et confidentialité des enfants",
+          body: (
+            <>
+              <ul>
+                <li>Topiqo est destiné aux utilisateurs âgés de <strong>13 ans et plus</strong>.</li>
+                <li>
+                  Nous ne collectons pas sciemment d’informations personnelles
+                  auprès d’enfants de moins de 13 ans. Si un compte est créé par
+                  un utilisateur de moins de 13 ans, il sera supprimé
+                  immédiatement avec ses données.
+                </li>
+              </ul>
+            </>
           ),
         },
         {
           id: "data",
-          h: "Données que nous collectons",
+          h: "2. Informations que nous collectons",
           body: (
             <>
               <ul>
-                <li><strong>Compte</strong> : nom, email, mot de passe (haché), identifiants d’authentification.</li>
-                <li><strong>Utilisation</strong> : progression, réponses, scores, paramètres, feedbacks, historique pédagogique.</li>
-                <li><strong>Techniques</strong> : appareil, OS, version de l’app, identifiants de session, journaux (logs), IP <em>tronquée</em>, horodatages.</li>
-                <li><strong>Support</strong> : messages envoyés et métadonnées associées (ex. pièces jointes, date).</li>
-              </ul>
-              <p>
-                Nous <strong>n’exploitons pas</strong> de <em>données sensibles</em> (santé, opinions, etc.) et
-                nous ne faisons <strong>aucune publicité ciblée</strong> ni <strong>profilage marketing</strong> sur les mineurs.
-              </p>
-            </>
-          ),
-        },
-        {
-          id: "purposes",
-          h: "Finalités & bases légales",
-          body: (
-            <>
-              <ul>
-                <li><strong>Prestation du service (contrat)</strong> : compte, synchronisation, suivi des progrès, fonctionnalités pédagogiques.</li>
-                <li><strong>Amélioration & sécurité (intérêt légitime)</strong> : statistiques agrégées, correction de bugs, prévention fraude/abus, sécurité.</li>
-                <li><strong>Messages de service (intérêt légitime)</strong> : informations importantes, changements de fonctionnalités/conditions.</li>
-                <li><strong>Marketing (consentement)</strong> : newsletters/offres. Retrait possible à tout moment.</li>
+                <li><strong>Informations de compte</strong> : nom (facultatif), e-mail, mot de passe, année scolaire.</li>
+                <li><strong>Données d’apprentissage</strong> : progression, historique, quiz, séries, temps passé.</li>
+                <li><strong>Contenu téléchargé</strong> : notes, images, audios soumis. 
+                  <br />→ Les fichiers bruts sont supprimés immédiatement après traitement ; 
+                  seuls les contenus générés (quiz, exercices, leçons) sont stockés.
+                </li>
+                <li><strong>Fonctionnalités de concentration</strong> : statistiques Pomodoro et blocages d’apps (données locales ; si synchronisées, elles sont anonymisées).</li>
+                <li><strong>Informations de paiement</strong> : gérées par Apple/Google ; nous ne stockons pas les données bancaires.</li>
+                <li><strong>Données techniques</strong> : diagnostics, logs, performances, via outils internes ou prestataires.</li>
               </ul>
             </>
           ),
         },
         {
-          id: "cookies",
-          h: "Cookies & traceurs",
+          id: "use",
+          h: "3. Comment nous utilisons vos informations",
           body: (
-            <>
-              <ul>
-                <li><strong>Nécessaires</strong> : authentification, sécurité, préférences (déposés sans consentement).</li>
-                <li><strong>Mesure d’audience respectueuse</strong> : avec IP anonymisée lorsque possible.</li>
-                <li><strong>Marketing</strong> : uniquement avec consentement préalable. <strong>Pas d’ads ciblées mineur·e·s.</strong></li>
-              </ul>
-              <p>Tu peux gérer tes préférences à tout moment via le module de consentement (icône cookies ou paramètres).</p>
-            </>
+            <ul>
+              <li>Fournir l’accès aux leçons, quiz et fonctionnalités.</li>
+              <li>Personnaliser le contenu en fonction de l’année scolaire et progression.</li>
+              <li>Gérer votre compte et connexion.</li>
+              <li>Améliorer nos services et surveiller la performance.</li>
+              <li>Assurer la conformité légale et la sécurité.</li>
+            </ul>
           ),
         },
         {
-          id: "minors",
-          h: "Utilisation par des mineurs",
+          id: "anonymized",
+          h: "4. Données anonymisées et agrégées",
           body: (
-            <>
-              <p>
-                Topiqo est une application <strong>d’éducation destinée aux mineurs</strong> (collège/lycée).
-                En France, l’âge de consentement numérique est de <strong>15 ans</strong>. 
-              </p>
-              <ul>
-                <li>Si tu as <strong>15 ans ou plus</strong> : tu peux utiliser l’app conformément à cette politique.</li>
-                <li>Si tu as <strong>moins de 15 ans</strong> : l’usage nécessite le <strong>consentement parental</strong> vérifiable (ou du tuteur légal). Nous pouvons demander une validation par un parent/tuteur (ex. email de confirmation ou autre moyen approprié).</li>
-              </ul>
-              <p>
-                Les parents/tuteurs peuvent <strong>exercer les droits</strong> (accès, suppression, etc.) au nom du mineur en écrivant à{" "}
-                <a className="link" href="mailto:privacy@topiqo.com">privacy@topiqo.com</a>.
-              </p>
-            </>
+            <p>
+              Nous pouvons conserver et analyser des données anonymisées et agrégées 
+              (ex. temps de réponse aux quiz, taux de complétion) afin d’améliorer 
+              nos services, mener des recherches et publier des tendances 
+              éducatives. Ces données ne permettent pas de vous identifier.
+            </p>
+          ),
+        },
+        {
+          id: "sharing",
+          h: "5. Partage d’informations",
+          body: (
+            <ul>
+              <li><strong>Jamais vendues</strong>.</li>
+              <li>Avec des prestataires de confiance (hébergement, analytics, emailing).</li>
+              <li>Si requis légalement (loi, justice).</li>
+              <li>En cas de fusion/acquisition (toujours selon cette Politique).</li>
+              <li>Avec votre consentement explicite.</li>
+            </ul>
           ),
         },
         {
           id: "retention",
-          h: "Durées de conservation",
+          h: "6. Conservation des données",
           body: (
-            <p>
-              Données conservées tant que le compte est actif. Après suppression, effacement ou anonymisation sous
-              <strong> 24 mois</strong> (sauf obligation légale).
-            </p>
+            <ul>
+              <li>Données conservées tant que le compte est actif.</li>
+              <li>Contenus générés stockés jusqu’à suppression volontaire.</li>
+              <li>Fichiers bruts supprimés après traitement immédiat.</li>
+              <li>Données anonymisées conservées indéfiniment.</li>
+            </ul>
           ),
         },
         {
-          id: "recipients",
-          h: "Destinataires",
-          body: (
-            <>
-              <p>
-                Accès limité aux équipes habilitées de Topiqo (besoin d’en connaître). Certaines données peuvent être partagées avec des
-                <strong> sous-traitants</strong> (hébergement, emailing transactionnel, analytique respectueuse).
-              </p>
-            </>
-          ),
-        },
-        {
-          id: "processors",
-          h: "Sous-traitants & hébergement",
+          id: "rights",
+          h: "7. Vos droits",
           body: (
             <p>
-              Hébergement dans l’UE ou équivalent (ex. OVHcloud/Scaleway). Sous-traitants liés par des{" "}
-              <abbr title="Accords de traitement">DPA</abbr>, audités, agissant sur instruction de Topiqo.
-            </p>
-          ),
-        },
-        {
-          id: "transfers",
-          h: "Transferts hors UE",
-          body: (
-            <p>
-              S’il y a transfert, nous appliquons des <strong>garanties adéquates</strong> (Clauses Contractuelles Types, TIA) et la <strong>minimisation</strong>.
+              Vous pouvez exercer vos droits d’accès, rectification, suppression,
+              portabilité, objection ou restriction en écrivant à{" "}
+              <a href="mailto:privacy@topiqo.fr" className="link">privacy@topiqo.fr</a>.  
+              Nous pouvons vérifier votre identité avant de répondre.  
+              Réponse sous 1 mois (prolongeable).
             </p>
           ),
         },
         {
           id: "security",
-          h: "Sécurité",
-          body: (
-            <>
-              <ul>
-                <li>Chiffrement en transit (TLS) et au repos selon l’hébergeur.</li>
-                <li>Contrôles d’accès, journalisation, sauvegardes régulières.</li>
-                <li>Tests/correctifs de sécurité selon les bonnes pratiques.</li>
-              </ul>
-            </>
-          ),
-        },
-        {
-          id: "breach",
-          h: "Violation de données",
+          h: "8. Sécurité des données",
           body: (
             <p>
-              En cas d’incident, nous appliquons notre procédure et notifierons la CNIL et/ou les personnes concernées lorsque requis.
+              Nous mettons en œuvre des mesures techniques et organisationnelles
+              adaptées (chiffrement TLS, contrôles d’accès, sauvegardes, audits).
+              Aucun système n’étant invulnérable, nous améliorons en continu nos
+              pratiques de sécurité.
             </p>
           ),
         },
         {
-          id: "rights",
-          h: "Tes droits (RGPD)",
+          id: "international",
+          h: "9. Utilisateurs internationaux",
           body: (
-            <>
-              <p>
-                Droits : <strong>accès</strong>, <strong>rectification</strong>, <strong>effacement</strong>, <strong>opposition</strong>, <strong>limitation</strong>, <strong>portabilité</strong>, <strong>retrait du consentement</strong>.
-                Écris à <a className="link" href="mailto:privacy@topiqo.com">privacy@topiqo.com</a>. Réponse sous <strong>un mois</strong> (prolongeable).
-              </p>
-              <p>
-                Autorité de contrôle :{" "}
-                <a className="link" href="https://www.cnil.fr" target="_blank" rel="noreferrer">CNIL</a>.
-              </p>
-            </>
+            <p>
+              Vos données peuvent être stockées et traitées hors de votre pays
+              de résidence. En utilisant Topiqo, vous consentez à ces transferts,
+              soumis à des garanties appropriées.
+            </p>
           ),
         },
         {
           id: "changes",
-          h: "Modifications",
+          h: "10. Modifications",
           body: (
             <p>
-              Nous pouvons mettre à jour cette politique. En cas de changement important, nous t’informerons et
-              mettrons à jour la date ci-dessus.
+              Nous pouvons mettre à jour cette Politique. Les changements
+              importants seront communiqués dans l’app ou par e-mail.
             </p>
           ),
         },
         {
           id: "contact",
-          h: "Contact",
+          h: "11. Contact",
           body: (
             <p>
-              DPO : <a className="link" href="mailto:dpo@topiqo.com">dpo@topiqo.com</a> — Support :{" "}
-              <a className="link" href="mailto:privacy@topiqo.com">privacy@topiqo.com</a> — Topiqo SAS, 10 rue Exemple, 75000 Paris.
+              Pour toute question :{" "}
+              <a href="mailto:privacy@topiqo.fr" className="link">privacy@topiqo.fr</a>
             </p>
           ),
         },
@@ -219,206 +173,157 @@ export default function Privacy({ lang = "fr" }) {
     en: {
       brand: "Topiqo",
       title: "Privacy Policy",
-      subtitle:
-        "How we collect, use, and protect your data (GDPR/CNIL compliant).",
-      updated: "Last updated: August 9, 2025",
-      effective: "Effective date: August 9, 2025",
+      subtitle: "How we collect, use, and protect your personal data.",
+      updated: "Last updated: September 10, 2025",
+      effective: "Effective date: September 10, 2025",
       toc: "Contents",
       sections: [
         {
-          id: "overview",
-          h: "Summary",
-          body: (
-            <>
-              <p>
-                This policy explains what we process, why, for how long, with whom we share it, and your rights.
-                It applies to the <strong>Topiqo</strong> website and app.
-              </p>
-            </>
-          ),
-        },
-        {
-          id: "controller",
-          h: "Controller",
-          body: (
-            <>
-              <p>
-                <strong>Topiqo SAS</strong> — 10 rue Exemple, 75000 Paris, France.
-                <br />
-                Email: <a className="link" href="mailto:privacy@topiqo.com">privacy@topiqo.com</a>
-              </p>
-            </>
-          ),
-        },
-        {
-          id: "dpo",
-          h: "Data Protection Officer (DPO)",
+          id: "intro",
+          h: "Introduction",
           body: (
             <p>
-              DPO contact:{" "}
-              <a className="link" href="mailto:dpo@topiqo.com">dpo@topiqo.com</a>. You can contact the DPO for questions about your rights or our processing.
+              Topiqo ("we", "our") values your privacy and is committed to
+              protecting your personal data. This Policy explains how we collect,
+              use, store, and share information when you use our mobile apps,
+              website, and related services (collectively, the "Service").
             </p>
+          ),
+        },
+        {
+          id: "eligibility",
+          h: "1. Eligibility & Children’s Privacy",
+          body: (
+            <ul>
+              <li>Topiqo is intended for users aged <strong>13 and above</strong>.</li>
+              <li>
+                We do not knowingly collect data from children under 13. If such
+                an account is found, it will be deleted immediately along with
+                its data.
+              </li>
+            </ul>
           ),
         },
         {
           id: "data",
-          h: "Data we collect",
+          h: "2. Information We Collect",
           body: (
-            <>
-              <ul>
-                <li><strong>Account</strong>: name, email, password (hashed), auth identifiers.</li>
-                <li><strong>Usage</strong>: progress, answers, scores, settings, feedback, learning history.</li>
-                <li><strong>Technical</strong>: device, OS, app version, session IDs, logs, <em>truncated</em> IP, timestamps.</li>
-                <li><strong>Support</strong>: messages and related metadata.</li>
-              </ul>
-              <p>
-                We do <strong>not</strong> use <em>sensitive data</em>, and we do <strong>no targeted ads</strong> or <strong>marketing profiling</strong> for minors.
-              </p>
-            </>
+            <ul>
+              <li><strong>Account info</strong>: name (optional), email, password, grade level.</li>
+              <li><strong>Learning data</strong>: progress, history, quizzes, streaks, study time.</li>
+              <li><strong>Uploaded content</strong>: notes, images, audio.
+                <br />→ Raw uploads are deleted immediately after processing;
+                only generated study materials (quizzes, lessons) are stored.
+              </li>
+              <li><strong>Focus features</strong>: Pomodoro or app-blocking stats (local; anonymized if synced).</li>
+              <li><strong>Payment info</strong>: managed by Apple/Google; we never store card details.</li>
+              <li><strong>Device & usage data</strong>: diagnostics, crash logs, performance metrics.</li>
+            </ul>
           ),
         },
         {
-          id: "purposes",
-          h: "Purposes & legal bases",
+          id: "use",
+          h: "3. How We Use Your Information",
           body: (
-            <>
-              <ul>
-                <li><strong>Service delivery (contract)</strong>: account, sync, progress tracking, learning features.</li>
-                <li><strong>Improvement & security (legitimate interest)</strong>: aggregated stats, bug fixing, fraud/abuse prevention, security.</li>
-                <li><strong>Service communications (legitimate interest)</strong>: important operational notices/changes.</li>
-                <li><strong>Marketing (consent)</strong>: newsletters/offers. You can withdraw consent anytime.</li>
-              </ul>
-            </>
+            <ul>
+              <li>Deliver lessons, quizzes, and focus tools.</li>
+              <li>Personalize content based on grade and progress.</li>
+              <li>Manage accounts and logins.</li>
+              <li>Improve features and monitor performance.</li>
+              <li>Ensure compliance with law and security.</li>
+            </ul>
           ),
         },
         {
-          id: "cookies",
-          h: "Cookies & trackers",
+          id: "anonymized",
+          h: "4. Anonymized & Aggregated Data",
           body: (
-            <>
-              <ul>
-                <li><strong>Essential</strong>: auth, security, preferences (set without consent).</li>
-                <li><strong>Privacy-friendly analytics</strong>: with anonymized IP where possible.</li>
-                <li><strong>Marketing</strong>: only with prior consent. <strong>No targeted ads for minors.</strong></li>
-              </ul>
-              <p>You can manage your preferences anytime via the consent module (cookie icon or settings).</p>
-            </>
+            <p>
+              We may retain and analyze anonymized and aggregated data (e.g.,
+              quiz response times, completion rates) to improve services, conduct
+              research, and publish insights. This data cannot be used to
+              identify you.
+            </p>
           ),
         },
         {
-          id: "minors",
-          h: "Use by minors",
+          id: "sharing",
+          h: "5. Information Sharing",
           body: (
-            <>
-              <p>
-                Topiqo is an <strong>education app intended for minors</strong> (middle/high school).
-                In France, the digital age of consent is <strong>15</strong>.
-              </p>
-              <ul>
-                <li>If you are <strong>15 or older</strong>: you may use the app in line with this policy.</li>
-                <li>If you are <strong>under 15</strong>: use requires <strong>verifiable parental consent</strong>. We may ask a parent/guardian to validate (e.g., email confirmation or another appropriate method).</li>
-              </ul>
-              <p>
-                Parents/guardians may <strong>exercise rights</strong> (access, deletion, etc.) on the minor’s behalf by writing to{" "}
-                <a className="link" href="mailto:privacy@topiqo.com">privacy@topiqo.com</a>.
-              </p>
-            </>
+            <ul>
+              <li><strong>Never sold</strong>.</li>
+              <li>Shared only with trusted providers (hosting, analytics, transactional email).</li>
+              <li>Disclosed when legally required.</li>
+              <li>Transferred in case of merger/acquisition, under this Policy.</li>
+              <li>With your explicit consent.</li>
+            </ul>
           ),
         },
         {
           id: "retention",
-          h: "Retention",
+          h: "6. Data Retention",
           body: (
-            <p>
-              Data kept while the account is active. After deletion, data is erased or anonymized within <strong>24 months</strong> (unless the law requires otherwise).
-            </p>
+            <ul>
+              <li>Kept while your account is active.</li>
+              <li>Generated study content stored until you delete it.</li>
+              <li>Raw uploads deleted after immediate processing.</li>
+              <li>Anonymized data may be retained indefinitely.</li>
+            </ul>
           ),
         },
         {
-          id: "recipients",
-          h: "Recipients",
-          body: (
-            <>
-              <p>
-                Access is limited to authorized Topiqo staff (need-to-know). Some data may be shared with{" "}
-                <strong>processors</strong> (hosting, transactional email, privacy-friendly analytics).
-              </p>
-            </>
-          ),
-        },
-        {
-          id: "processors",
-          h: "Processors & hosting",
+          id: "rights",
+          h: "7. Your Rights",
           body: (
             <p>
-              Hosting within the EU or equivalent (e.g., OVHcloud/Scaleway). Processors are bound by{" "}
-              <abbr title="Data Processing Agreement">DPAs</abbr>, audited, and act only on Topiqo’s instructions.
-            </p>
-          ),
-        },
-        {
-          id: "transfers",
-          h: "International transfers",
-          body: (
-            <p>
-              Where transfers occur, we implement <strong>appropriate safeguards</strong> (SCCs, TIAs) and <strong>minimization</strong>.
+              Depending on your location, you may have GDPR/CCPA rights
+              (access, correction, deletion, portability, objection, restriction).
+              To exercise them, email{" "}
+              <a href="mailto:privacy@topiqo.fr" className="link">privacy@topiqo.fr</a>.  
+              We may request identity verification.  
+              Response within 1 month (extendable).
             </p>
           ),
         },
         {
           id: "security",
-          h: "Security",
-          body: (
-            <>
-              <ul>
-                <li>Encryption in transit (TLS) and at rest where supported.</li>
-                <li>Access controls, logging, regular backups.</li>
-                <li>Security testing/patching following best practices.</li>
-              </ul>
-            </>
-          ),
-        },
-        {
-          id: "breach",
-          h: "Data breach",
+          h: "8. Data Security",
           body: (
             <p>
-              If an incident occurs, we follow our incident process and notify the CNIL and/or data subjects when required.
+              We implement appropriate safeguards (TLS encryption, access
+              controls, backups, audits). No system is fully secure, but we
+              continuously improve our practices.
             </p>
           ),
         },
         {
-          id: "rights",
-          h: "Your rights (GDPR)",
+          id: "international",
+          h: "9. International Users",
           body: (
-            <>
-              <p>
-                Rights: <strong>access</strong>, <strong>rectification</strong>, <strong>erasure</strong>, <strong>objection</strong>, <strong>restriction</strong>, <strong>portability</strong>, <strong>withdrawal of consent</strong>.
-                Write to <a className="link" href="mailto:privacy@topiqo.com">privacy@topiqo.com</a>. We respond within <strong>one month</strong> (extendable).
-              </p>
-              <p>
-                Supervisory authority:{" "}
-                <a className="link" href="https://www.cnil.fr" target="_blank" rel="noreferrer">CNIL</a>.
-              </p>
-            </>
+            <p>
+              Your data may be processed outside your country of residence. By
+              using Topiqo, you consent to such transfers, subject to adequate
+              safeguards.
+            </p>
           ),
         },
         {
           id: "changes",
-          h: "Changes",
+          h: "10. Changes",
           body: (
             <p>
-              We may update this policy. For material changes, we will inform you and update the date above.
+              We may update this Policy. Significant changes will be notified
+              within the app or via email.
             </p>
           ),
         },
         {
           id: "contact",
-          h: "Contact",
+          h: "11. Contact",
           body: (
             <p>
-              DPO: <a className="link" href="mailto:dpo@topiqo.com">dpo@topiqo.com</a> — Support:{" "}
-              <a className="link" href="mailto:privacy@topiqo.com">privacy@topiqo.com</a> — Topiqo SAS, 10 rue Exemple, 75000 Paris.
+              Questions? Contact us at{" "}
+              <a href="mailto:privacy@topiqo.fr" className="link">privacy@topiqo.fr</a>.
             </p>
           ),
         },
@@ -477,8 +382,9 @@ export default function Privacy({ lang = "fr" }) {
 
       <footer className="privacy-note">
         <p>
-          Cette page présente les engagements de Topiqo au regard du RGPD et de la loi française. 
-          En cas de divergence linguistique, la version française prévaut.
+          {lang === "fr"
+            ? "En cas de divergence linguistique, la version française prévaut."
+            : "In case of linguistic differences, the French version shall prevail."}
         </p>
       </footer>
     </main>
