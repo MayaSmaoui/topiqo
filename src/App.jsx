@@ -64,7 +64,6 @@ function App() {
   const t = TEXTS[lang];
   const goTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-
   // Échap pour fermer
   useEffect(() => {
     function onKey(e){ if(e.key === 'Escape') setMenuOpen(false); }
@@ -86,33 +85,32 @@ function App() {
     <BrowserRouter>
       {/* NAVBAR */}
       <nav className="navbar">
-       <div className="navbar-inner">
-  <div className="nav-left">
-    <button
-      className="burger"
-      aria-label={lang === "fr" ? "Ouvrir le menu" : "Open menu"}
-      aria-controls="topiqo-drawer"
-      aria-expanded={menuOpen ? "true" : "false"}
-      onClick={() => setMenuOpen(true)}
-    >
-      <span></span><span></span><span></span>
-    </button>
+        <div className="navbar-inner">
+          <div className="nav-left">
+            <button
+              className="burger"
+              aria-label={lang === "fr" ? "Ouvrir le menu" : "Open menu"}
+              aria-controls="topiqo-drawer"
+              aria-expanded={menuOpen ? "true" : "false"}
+              onClick={() => setMenuOpen(true)}
+            >
+              <span></span><span></span><span></span>
+            </button>
 
-    <Link to="/" className="logo">Topiqo</Link>
-  </div>
+            <Link to="/" className="logo">Topiqo</Link>
+          </div>
 
-  <div className="nav-links">
-    <Link to="/login" className="nav-link">{t.login}</Link>
-    <Link to="/signup" className="signup-button">{t.signup}</Link>
-    <button
-      className="lang-toggle"
-      onClick={() => setLang(lang === "fr" ? "en" : "fr")}
-    >
-      {lang === "fr" ? "EN" : "FR"}
-    </button>
-  </div>
-</div>
-
+          <div className="nav-links">
+            <Link to="/login" className="nav-link">{t.login}</Link>
+            <Link to="/signup" className="signup-button">{t.signup}</Link>
+            <button
+              className="lang-toggle"
+              onClick={() => setLang(lang === "fr" ? "en" : "fr")}
+            >
+              {lang === "fr" ? "EN" : "FR"}
+            </button>
+          </div>
+        </div>
       </nav>
 
       {/* OVERLAY + DRAWER */}
@@ -138,20 +136,26 @@ function App() {
           </button>
         </div>
 
+        {/* >>> Drawer links (ajout de Terms) */}
         <nav className="drawer-links">
-  {[
-    { label: t.links[0], to: "/#features" }, // Fonctionnalités
-    { label: t.links[1], to: "/download" },  // Télécharger l’app
-    { label: t.links[3], to: "/help" },      // Aide
-    { label: t.links[4], to: "/contact" },   // Contact
-    { label: t.links[2], to: "/pricing" }    // Tarifs
-  ].map((item, i) => (
-    <Link key={i} to={item.to} className="drawer-link" onClick={() => setMenuOpen(false)}>
-      {item.label}
-    </Link>
-  ))}
-</nav>
-
+          {[
+            { label: t.links[0], to: "/#features" }, // Accueil / Home
+            { label: t.links[1], to: "/download" },  // Télécharger / Download
+            { label: t.links[3], to: "/help" },      // Aide / Help
+            { label: t.links[4], to: "/contact" },   // Contact
+            { label: t.links[2], to: "/pricing" },   // Tarifs / Pricing
+            { label: t.links[7], to: "/terms" }      // ✅ CGU / Terms
+          ].map((item, i) => (
+            <Link
+              key={i}
+              to={item.to}
+              className="drawer-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
 
         <div className="drawer-cta">
           <Link to="/signup" className="btn btn-primary" onClick={closeAnd()}>{t.signup}</Link>
@@ -196,24 +200,24 @@ function App() {
               <Link to="/signup" className="footer-cta">{t.signup}</Link>
             </div>
 
+            {/* >>> Footer links (correction: Terms pointe vers /terms) */}
             <nav className="footer-col">
-  <h4>{lang === "fr" ? "Liens" : "Links"}</h4>
-  {[
-    { label: t.links[0], to: "/#features" },
-    { label: t.links[1], to: "/download" },
-    { label: t.links[2], to: "/pricing" },
-    { label: t.links[3], to: "/help" },
-    { label: t.links[4], to: "/contact" },
-    { label: t.links[5], to: "/privacy" },
-    { label: t.links[6], to: "/legal" },
-    { label: t.links[7], to: "/terms" },
-  ].map((item, i) => (
-    <Link key={i} to={item.to} onClick={goTop}>
-      {item.label}
-    </Link>
-  ))}
-</nav>
-
+              <h4>{lang === "fr" ? "Liens" : "Links"}</h4>
+              {[
+                { label: t.links[0], to: "/#features" },
+                { label: t.links[1], to: "/download" },
+                { label: t.links[2], to: "/pricing" },
+                { label: t.links[3], to: "/help" },
+                { label: t.links[4], to: "/contact" },
+                { label: t.links[7], to: "/terms" },   // ✅ CGU / Terms (CORRIGÉ)
+                { label: t.links[5], to: "/privacy" },
+                { label: t.links[6], to: "/legal" }
+              ].map((item, i) => (
+                <Link key={i} to={item.to} onClick={goTop}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
           </div>
 
           <div className="footer-bottom">
