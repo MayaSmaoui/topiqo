@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Legal from './pages/Legal';
 import Download from './pages/Download';
+import Terms from '.pages/Terms';
 
 // Textes FR / EN
 const TEXTS = {
@@ -176,6 +177,7 @@ function App() {
         <Route path="/privacy" element={<Privacy lang={lang} />} />
         <Route path="/legal" element={<Legal lang={lang} />} />
         <Route path="/download" element={<Download lang={lang} />} />
+        <Route path="/terms" element={<Terms lang={lang} />} /> 
       </Routes>
 
       {/* FOOTER */}
@@ -201,7 +203,8 @@ function App() {
     { label: t.links[3], to: "/help" },
     { label: t.links[4], to: "/contact" },
     { label: t.links[5], to: "/privacy" },
-    { label: t.links[6], to: "/legal" }
+    { label: t.links[6], to: "/legal" },
+    { label: t.links[6], to: "/terms" }
   ].map((item, i) => (
     <Link key={i} to={item.to} onClick={goTop}>
       {item.label}

@@ -48,8 +48,9 @@ export default function Signup({ lang = 'fr' }) {
         <label className="check">
           <input type="checkbox" checked={form.consent} onChange={(e)=>setForm({...form, consent:e.target.checked})} />
           <span>
-            {T.consent} <a className="link" href="/legal">CGU</a> • <a className="link" href="/privacy">Privacy</a>
-          </span>
+  {T.consent} <a className="link" href="/terms">{lang === 'fr' ? 'CGU' : 'Terms'}</a> • <a className="link" href="/privacy">Privacy</a>
+</span>
+
         </label>
 
         <button className="btn btn-primary" disabled={loading}>
