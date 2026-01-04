@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Pricing from './pages/Pricing';
 import Help from './pages/Help';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
@@ -28,7 +27,6 @@ const TEXTS = {
     links: [
       "Accueil",
       "Télécharger l’app",
-      "Tarifs",
       "Aide",
       "Contact",
       "Confidentialité",
@@ -48,7 +46,6 @@ const TEXTS = {
     links: [
       "Home Page",
       "Download the app",
-      "Pricing",
       "Help",
       "Contact",
       "Privacy",
@@ -139,12 +136,11 @@ function App() {
         {/* >>> Drawer links (ajout de Terms) */}
         <nav className="drawer-links">
           {[
-            { label: t.links[0], to: "/#features" }, // Accueil / Home
-            { label: t.links[1], to: "/download" },  // Télécharger / Download
-            { label: t.links[3], to: "/help" },      // Aide / Help
-            { label: t.links[4], to: "/contact" },   // Contact
-            { label: t.links[2], to: "/pricing" },   // Tarifs / Pricing
-            { label: t.links[7], to: "/terms" }      // ✅ CGU / Terms
+            { label: t.links[0], to: "/#features" }, // Home
+            { label: t.links[1], to: "/download" },  // Download
+            { label: t.links[2], to: "/help" },      // Help
+            { label: t.links[3], to: "/contact" },   // Contact
+            { label: t.links[6], to: "/terms" }      // Terms
           ].map((item, i) => (
             <Link
               key={i}
@@ -155,6 +151,7 @@ function App() {
               {item.label}
             </Link>
           ))}
+
         </nav>
 
         <div className="drawer-cta">
@@ -177,7 +174,6 @@ function App() {
         <Route path="/" element={<Home t={t} lang={lang} setLang={setLang} />} />
         <Route path="/login" element={<Login lang={lang} />} />
         <Route path="/signup" element={<Signup lang={lang} />} />
-        <Route path="/pricing" element={<Pricing lang={lang} />} />
         <Route path="/help" element={<Help lang={lang} />} />
         <Route path="/contact" element={<Contact lang={lang} />} />
         <Route path="/privacy" element={<Privacy lang={lang} />} />
@@ -206,17 +202,17 @@ function App() {
               {[
                 { label: t.links[0], to: "/#features" },
                 { label: t.links[1], to: "/download" },
-                { label: t.links[2], to: "/pricing" },
-                { label: t.links[3], to: "/help" },
-                { label: t.links[4], to: "/contact" },
-                { label: t.links[7], to: "/terms" },   // ✅ CGU / Terms (CORRIGÉ)
-                { label: t.links[5], to: "/privacy" },
-                { label: t.links[6], to: "/legal" }
+                { label: t.links[2], to: "/help" },
+                { label: t.links[3], to: "/contact" },
+                { label: t.links[6], to: "/terms" },
+                { label: t.links[4], to: "/privacy" },
+                { label: t.links[5], to: "/legal" }
               ].map((item, i) => (
                 <Link key={i} to={item.to} onClick={goTop}>
                   {item.label}
                 </Link>
               ))}
+
             </nav>
           </div>
 
