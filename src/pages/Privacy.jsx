@@ -17,159 +17,199 @@ export default function Privacy({ lang = "fr" }) {
           h: "Introduction",
           body: (
             <p>
-              Topiqo (« nous », « notre », « nos ») valorise votre vie privée et
-              s’engage à protéger vos informations personnelles. Cette Politique
-              explique comment nous collectons, utilisons, stockons et partageons
-              vos informations lorsque vous utilisez nos applications mobiles,
-              notre site web et nos services associés (collectivement, le «
-              Service »).
+              Topiqo (« nous », « notre », « nos ») attache une grande importance à la protection de votre
+              vie privée. La présente Politique de confidentialité explique comment nous collectons,
+              utilisons, stockons et protégeons vos données personnelles lorsque vous utilisez nos
+              applications mobiles, notre site web et les services associés (collectivement, le « Service »).
             </p>
           ),
         },
         {
           id: "eligibility",
-          h: "1. Éligibilité et confidentialité des enfants",
+          h: "1. Éligibilité et protection des mineurs",
           body: (
-            <>
-              <ul>
-                <li>Topiqo est destiné aux utilisateurs âgés de <strong>13 ans et plus</strong>.</li>
-                <li>
-                  Nous ne collectons pas sciemment d’informations personnelles
-                  auprès d’enfants de moins de 13 ans. Si un compte est créé par
-                  un utilisateur de moins de 13 ans, il sera supprimé
-                  immédiatement avec ses données.
-                </li>
-              </ul>
-            </>
+            <ul>
+              <li>Topiqo est destiné aux utilisateurs âgés de <strong>13 ans et plus</strong>.</li>
+              <li>
+                Nous ne collectons pas sciemment de données personnelles concernant des enfants de moins
+                de 13 ans.
+              </li>
+              <li>
+                Si nous découvrons qu’un utilisateur a moins de 13 ans, le compte concerné sera supprimé
+                ainsi que les données associées, conformément à la loi.
+              </li>
+              <li>
+                Les utilisateurs mineurs déclarent disposer, lorsque requis, de l’autorisation d’un parent
+                ou représentant légal.
+              </li>
+            </ul>
           ),
         },
         {
           id: "data",
-          h: "2. Informations que nous collectons",
+          h: "2. Données que nous collectons",
           body: (
             <>
               <ul>
-                <li><strong>Informations de compte</strong> : nom (facultatif), e-mail, mot de passe, année scolaire.</li>
-                <li><strong>Données d’apprentissage</strong> : progression, historique, quiz, séries, temps passé.</li>
-                <li><strong>Contenu téléchargé</strong> : notes, images, audios soumis. 
-                  <br />→ Les fichiers bruts sont supprimés immédiatement après traitement ; 
-                  seuls les contenus générés (quiz, exercices, leçons) sont stockés.
+                <li>
+                  <strong>Données de compte</strong> : adresse e-mail, mot de passe chiffré, nom ou pseudonyme
+                  (facultatif), année ou niveau scolaire.
                 </li>
-                <li><strong>Fonctionnalités de concentration</strong> : statistiques Pomodoro et blocages d’apps (données locales ; si synchronisées, elles sont anonymisées).</li>
-                <li><strong>Informations de paiement</strong> : gérées par Apple/Google ; nous ne stockons pas les données bancaires.</li>
-                <li><strong>Données techniques</strong> : diagnostics, logs, performances, via outils internes ou prestataires.</li>
+                <li>
+                  <strong>Données d’apprentissage</strong> : progression, résultats de quiz, historique
+                  d’utilisation, séries d’apprentissage, temps passé.
+                </li>
+                <li>
+                  <strong>Contenus téléversés</strong> : notes, textes, images ou audios fournis par
+                  l’utilisateur pour générer des contenus pédagogiques.
+                  <br />
+                  → Les fichiers bruts sont supprimés après traitement, sauf obligation légale contraire.
+                </li>
+                <li>
+                  <strong>Contenus générés</strong> : leçons, quiz, exercices et parcours créés à partir des
+                  entrées utilisateur, conservés jusqu’à suppression par l’utilisateur.
+                </li>
+                <li>
+                  <strong>Données de paiement</strong> : gérées exclusivement par Apple App Store ou Google
+                  Play Store. Topiqo ne stocke aucune donnée bancaire.
+                </li>
+                <li>
+                  <strong>Données techniques</strong> : logs, diagnostics, données de performance et de
+                  sécurité nécessaires au bon fonctionnement du Service.
+                </li>
               </ul>
             </>
           ),
         },
         {
           id: "use",
-          h: "3. Comment nous utilisons vos informations",
+          h: "3. Finalités de l’utilisation des données",
           body: (
             <ul>
-              <li>Fournir l’accès aux leçons, quiz et fonctionnalités.</li>
-              <li>Personnaliser le contenu en fonction de l’année scolaire et progression.</li>
-              <li>Gérer votre compte et connexion.</li>
-              <li>Améliorer nos services et surveiller la performance.</li>
-              <li>Assurer la conformité légale et la sécurité.</li>
+              <li>Fournir l’accès au Service et à ses fonctionnalités éducatives.</li>
+              <li>Créer et personnaliser les parcours d’apprentissage.</li>
+              <li>Gérer les comptes utilisateurs et l’authentification.</li>
+              <li>Améliorer la qualité, la sécurité et la performance du Service.</li>
+              <li>Respecter nos obligations légales et réglementaires.</li>
+            </ul>
+          ),
+        },
+        {
+          id: "legal",
+          h: "4. Bases légales du traitement (RGPD)",
+          body: (
+            <ul>
+              <li>L’exécution du contrat (fourniture du Service).</li>
+              <li>Le consentement de l’utilisateur lorsque requis.</li>
+              <li>Le respect des obligations légales applicables.</li>
+              <li>Notre intérêt légitime à améliorer et sécuriser le Service.</li>
             </ul>
           ),
         },
         {
           id: "anonymized",
-          h: "4. Données anonymisées et agrégées",
+          h: "5. Données anonymisées et agrégées",
           body: (
             <p>
-              Nous pouvons conserver et analyser des données anonymisées et agrégées 
-              (ex. temps de réponse aux quiz, taux de complétion) afin d’améliorer 
-              nos services, mener des recherches et publier des tendances 
-              éducatives. Ces données ne permettent pas de vous identifier.
+              Nous pouvons utiliser des données anonymisées et agrégées (par exemple, taux de complétion,
+              temps moyen d’apprentissage) à des fins statistiques, de recherche et d’amélioration du
+              Service. Ces données ne permettent en aucun cas de vous identifier.
             </p>
           ),
         },
         {
           id: "sharing",
-          h: "5. Partage d’informations",
+          h: "6. Partage des données",
           body: (
             <ul>
-              <li><strong>Jamais vendues</strong>.</li>
-              <li>Avec des prestataires de confiance (hébergement, analytics, emailing).</li>
-              <li>Si requis légalement (loi, justice).</li>
-              <li>En cas de fusion/acquisition (toujours selon cette Politique).</li>
-              <li>Avec votre consentement explicite.</li>
+              <li>Vos données ne sont <strong>jamais vendues</strong>.</li>
+              <li>
+                Elles peuvent être partagées avec des prestataires de confiance (hébergement, analytics,
+                e-mails transactionnels), strictement nécessaires au fonctionnement du Service.
+              </li>
+              <li>Elles peuvent être divulguées si la loi l’exige.</li>
+              <li>
+                En cas de fusion, acquisition ou restructuration, les données resteraient soumises à la
+                présente Politique.
+              </li>
             </ul>
           ),
         },
         {
           id: "retention",
-          h: "6. Conservation des données",
+          h: "7. Durée de conservation",
           body: (
             <ul>
               <li>Données conservées tant que le compte est actif.</li>
-              <li>Contenus générés stockés jusqu’à suppression volontaire.</li>
-              <li>Fichiers bruts supprimés après traitement immédiat.</li>
-              <li>Données anonymisées conservées indéfiniment.</li>
+              <li>Contenus générés conservés jusqu’à suppression par l’utilisateur.</li>
+              <li>Données techniques conservées selon des durées proportionnées.</li>
+              <li>Données anonymisées pouvant être conservées sans limite de durée.</li>
             </ul>
           ),
         },
         {
           id: "rights",
-          h: "7. Vos droits",
+          h: "8. Vos droits",
           body: (
             <p>
-              Vous pouvez exercer vos droits d’accès, rectification, suppression,
-              portabilité, objection ou restriction en écrivant à{" "}
-              <a href="mailto:privacy@topiqo.fr" className="link">privacy@topiqo.fr</a>.  
-              Nous pouvons vérifier votre identité avant de répondre.  
-              Réponse sous 1 mois (prolongeable).
+              Conformément au RGPD, vous disposez de droits d’accès, de rectification, de suppression,
+              d’opposition, de limitation et de portabilité de vos données.
+              <br />
+              Vous pouvez exercer ces droits en écrivant à{" "}
+              <a href="mailto:privacy@topiqo.fr" className="link">
+                privacy@topiqo.fr
+              </a>.
+              Une vérification d’identité pourra être demandée. Nous répondons dans un délai maximal d’un
+              mois, prolongeable si nécessaire.
             </p>
           ),
         },
         {
           id: "security",
-          h: "8. Sécurité des données",
+          h: "9. Sécurité des données",
           body: (
             <p>
-              Nous mettons en œuvre des mesures techniques et organisationnelles
-              adaptées (chiffrement TLS, contrôles d’accès, sauvegardes, audits).
-              Aucun système n’étant invulnérable, nous améliorons en continu nos
-              pratiques de sécurité.
+              Nous mettons en œuvre des mesures techniques et organisationnelles appropriées (chiffrement,
+              contrôles d’accès, sauvegardes, audits). Malgré ces efforts, aucun système n’est totalement
+              sécurisé et nous améliorons continuellement nos pratiques.
             </p>
           ),
         },
         {
           id: "international",
-          h: "9. Utilisateurs internationaux",
+          h: "10. Transferts internationaux",
           body: (
             <p>
-              Vos données peuvent être stockées et traitées hors de votre pays
-              de résidence. En utilisant Topiqo, vous consentez à ces transferts,
-              soumis à des garanties appropriées.
+              Vos données peuvent être traitées en dehors de votre pays de résidence. Ces transferts sont
+              encadrés par des garanties appropriées conformément au droit européen.
             </p>
           ),
         },
         {
           id: "changes",
-          h: "10. Modifications",
+          h: "11. Modifications de la Politique",
           body: (
             <p>
-              Nous pouvons mettre à jour cette Politique. Les changements
-              importants seront communiqués dans l’app ou par e-mail.
+              Nous pouvons modifier cette Politique de confidentialité. En cas de changement significatif,
+              nous vous en informerons via l’application ou par e-mail.
             </p>
           ),
         },
         {
           id: "contact",
-          h: "11. Contact",
+          h: "12. Contact",
           body: (
             <p>
-              Pour toute question :{" "}
-              <a href="mailto:privacy@topiqo.fr" className="link">privacy@topiqo.fr</a>
+              Pour toute question relative à la protection des données, contactez-nous à{" "}
+              <a href="mailto:privacy@topiqo.fr" className="link">
+                privacy@topiqo.fr
+              </a>.
             </p>
           ),
         },
       ],
     },
+
     en: {
       brand: "Topiqo",
       title: "Privacy Policy",
@@ -183,147 +223,145 @@ export default function Privacy({ lang = "fr" }) {
           h: "Introduction",
           body: (
             <p>
-              Topiqo ("we", "our") values your privacy and is committed to
-              protecting your personal data. This Policy explains how we collect,
-              use, store, and share information when you use our mobile apps,
-              website, and related services (collectively, the "Service").
+              Topiqo ("we", "our") is committed to protecting your privacy. This Privacy Policy explains how
+              we collect, use, store, and protect your personal data when you use our applications, website,
+              and related services (the “Service”).
             </p>
           ),
         },
         {
           id: "eligibility",
-          h: "1. Eligibility & Children’s Privacy",
+          h: "1. Eligibility and Children’s Privacy",
           body: (
             <ul>
               <li>Topiqo is intended for users aged <strong>13 and above</strong>.</li>
-              <li>
-                We do not knowingly collect data from children under 13. If such
-                an account is found, it will be deleted immediately along with
-                its data.
-              </li>
+              <li>We do not knowingly collect personal data from children under 13.</li>
+              <li>If such data is discovered, the account and associated data will be deleted.</li>
             </ul>
           ),
         },
         {
           id: "data",
-          h: "2. Information We Collect",
+          h: "2. Data We Collect",
           body: (
             <ul>
-              <li><strong>Account info</strong>: name (optional), email, password, grade level.</li>
-              <li><strong>Learning data</strong>: progress, history, quizzes, streaks, study time.</li>
-              <li><strong>Uploaded content</strong>: notes, images, audio.
-                <br />→ Raw uploads are deleted immediately after processing;
-                only generated study materials (quizzes, lessons) are stored.
-              </li>
-              <li><strong>Focus features</strong>: Pomodoro or app-blocking stats (local; anonymized if synced).</li>
-              <li><strong>Payment info</strong>: managed by Apple/Google; we never store card details.</li>
-              <li><strong>Device & usage data</strong>: diagnostics, crash logs, performance metrics.</li>
+              <li><strong>Account data</strong>: email address, encrypted password, optional name, grade level.</li>
+              <li><strong>Learning data</strong>: progress, quiz results, usage history.</li>
+              <li><strong>Uploaded content</strong>: notes, text, images, audio (raw uploads deleted after processing).</li>
+              <li><strong>Generated content</strong>: lessons, quizzes, exercises stored until deletion.</li>
+              <li><strong>Payment data</strong>: processed by Apple or Google only.</li>
+              <li><strong>Technical data</strong>: logs, diagnostics, performance metrics.</li>
             </ul>
           ),
         },
         {
           id: "use",
-          h: "3. How We Use Your Information",
+          h: "3. How We Use Data",
           body: (
             <ul>
-              <li>Deliver lessons, quizzes, and focus tools.</li>
-              <li>Personalize content based on grade and progress.</li>
-              <li>Manage accounts and logins.</li>
-              <li>Improve features and monitor performance.</li>
-              <li>Ensure compliance with law and security.</li>
+              <li>Provide and operate the Service.</li>
+              <li>Personalize learning paths.</li>
+              <li>Manage authentication and accounts.</li>
+              <li>Improve security and performance.</li>
+              <li>Comply with legal obligations.</li>
+            </ul>
+          ),
+        },
+        {
+          id: "legal",
+          h: "4. Legal Bases (GDPR)",
+          body: (
+            <ul>
+              <li>Contract performance.</li>
+              <li>User consent where required.</li>
+              <li>Legal obligations.</li>
+              <li>Legitimate interests.</li>
             </ul>
           ),
         },
         {
           id: "anonymized",
-          h: "4. Anonymized & Aggregated Data",
+          h: "5. Anonymized and Aggregated Data",
           body: (
             <p>
-              We may retain and analyze anonymized and aggregated data (e.g.,
-              quiz response times, completion rates) to improve services, conduct
-              research, and publish insights. This data cannot be used to
-              identify you.
+              We may use anonymized and aggregated data for analytics, research, and service improvement.
+              This data does not identify individual users.
             </p>
           ),
         },
         {
           id: "sharing",
-          h: "5. Information Sharing",
+          h: "6. Data Sharing",
           body: (
             <ul>
-              <li><strong>Never sold</strong>.</li>
-              <li>Shared only with trusted providers (hosting, analytics, transactional email).</li>
+              <li>Data is <strong>never sold</strong>.</li>
+              <li>Shared only with trusted service providers.</li>
               <li>Disclosed when legally required.</li>
-              <li>Transferred in case of merger/acquisition, under this Policy.</li>
-              <li>With your explicit consent.</li>
+              <li>Transferred in case of corporate transactions.</li>
             </ul>
           ),
         },
         {
           id: "retention",
-          h: "6. Data Retention",
+          h: "7. Data Retention",
           body: (
             <ul>
-              <li>Kept while your account is active.</li>
-              <li>Generated study content stored until you delete it.</li>
-              <li>Raw uploads deleted after immediate processing.</li>
+              <li>Data kept while the account is active.</li>
+              <li>Generated content stored until deletion.</li>
               <li>Anonymized data may be retained indefinitely.</li>
             </ul>
           ),
         },
         {
           id: "rights",
-          h: "7. Your Rights",
+          h: "8. Your Rights",
           body: (
             <p>
-              Depending on your location, you may have GDPR/CCPA rights
-              (access, correction, deletion, portability, objection, restriction).
-              To exercise them, email{" "}
-              <a href="mailto:privacy@topiqo.fr" className="link">privacy@topiqo.fr</a>.  
-              We may request identity verification.  
-              Response within 1 month (extendable).
+              You have rights of access, correction, deletion, objection, restriction, and portability under
+              GDPR. To exercise these rights, contact{" "}
+              <a href="mailto:privacy@topiqo.fr" className="link">
+                privacy@topiqo.fr
+              </a>.
             </p>
           ),
         },
         {
           id: "security",
-          h: "8. Data Security",
+          h: "9. Data Security",
           body: (
             <p>
-              We implement appropriate safeguards (TLS encryption, access
-              controls, backups, audits). No system is fully secure, but we
-              continuously improve our practices.
+              We use appropriate technical and organizational safeguards. However, no system is completely
+              secure.
             </p>
           ),
         },
         {
           id: "international",
-          h: "9. International Users",
+          h: "10. International Transfers",
           body: (
             <p>
-              Your data may be processed outside your country of residence. By
-              using Topiqo, you consent to such transfers, subject to adequate
-              safeguards.
+              Your data may be processed outside your country, subject to appropriate legal safeguards.
             </p>
           ),
         },
         {
           id: "changes",
-          h: "10. Changes",
+          h: "11. Changes",
           body: (
             <p>
-              We may update this Policy. Significant changes will be notified
-              within the app or via email.
+              We may update this Policy. Significant changes will be notified.
             </p>
           ),
         },
         {
           id: "contact",
-          h: "11. Contact",
+          h: "12. Contact",
           body: (
             <p>
-              Questions? Contact us at{" "}
-              <a href="mailto:privacy@topiqo.fr" className="link">privacy@topiqo.fr</a>.
+              Contact us at{" "}
+              <a href="mailto:privacy@topiqo.fr" className="link">
+                privacy@topiqo.fr
+              </a>.
             </p>
           ),
         },
