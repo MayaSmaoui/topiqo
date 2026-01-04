@@ -18,18 +18,18 @@ export default function Legal({ lang = "fr" }) {
               <p>
                 <strong>Topiqo SAS</strong> — Société par actions simplifiée
                 <br />
-                Capital social : <strong>10&nbsp;000&nbsp;€</strong>
+                Capital social : <strong>1&nbsp;000&nbsp;€</strong>
                 <br />
                 RCS : <strong>Paris</strong> — SIREN : <strong>000&nbsp;000&nbsp;000</strong>
                 <br />
-                Siège social : <strong>10 rue Exemple, 75000 Paris, France</strong>
+                Siège social : <strong>82 Rue des Trois Territoires, 94300 Vincennes, France</strong>
                 <br />
                 N° TVA intracommunautaire : <strong>FRXX&nbsp;000000000</strong>
               </p>
               <p>
                 Contact :{" "}
-                <a className="link" href="mailto:contact@topiqo.com">
-                  contact@topiqo.com
+                <a className="link" href="mailto:contact@topiqo.fr">
+                  contact@topiqo.fr
                 </a>
               </p>
             </>

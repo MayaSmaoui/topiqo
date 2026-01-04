@@ -149,7 +149,7 @@ export default function Terms({ lang = "fr" }) {
                 </li>
                 <li>
                   Pour exercer vos droits ou poser une question, contactez-nous via{" "}
-                  <a className="link" href="mailto:legal@topiqo.fr">legal@topiqo.fr</a>.
+                  <a className="link" href="mailto:contact@topiqo.fr">contact@topiqo.fr</a>.
                 </li>
               </ul>
             </>
@@ -164,7 +164,7 @@ export default function Terms({ lang = "fr" }) {
                 Topiqo respecte les droits de propriété intellectuelle et attend des utilisateurs qu’ils en
                 fassent de même. Si vous pensez qu’un contenu disponible via Topiqo porte atteinte à vos droits,
                 envoyez une <strong>notification DMCA</strong> à{" "}
-                <a className="link" href="mailto:legal@topiqo.fr">legal@topiqo.fr</a> contenant&nbsp;:
+                <a className="link" href="mailto:contact@topiqo.fr">contact@topiqo.fr</a> contenant&nbsp;:
               </p>
               <ol>
                 <li>Votre signature physique/électronique (ou celle du représentant autorisé).</li>
@@ -278,7 +278,7 @@ export default function Terms({ lang = "fr" }) {
           body: (
             <p>
               Topiqo — Équipe juridique •{" "}
-              <a className="link" href="mailto:legal@topiqo.fr">legal@topiqo.fr</a>
+              <a className="link" href="mailto:contact@topiqo.fr">contact@topiqo.fr</a>
             </p>
           ),
         },
@@ -420,7 +420,7 @@ export default function Terms({ lang = "fr" }) {
                 </li>
                 <li>
                   To exercise your rights or ask questions, contact{" "}
-                  <a className="link" href="mailto:legal@topiqo.fr">legal@topiqo.fr</a>.
+                  <a className="link" href="mailto:contact@topiqo.fr">contact@topiqo.fr</a>.
                 </li>
               </ul>
             </>
@@ -434,7 +434,7 @@ export default function Terms({ lang = "fr" }) {
               <p>
                 Topiqo respects intellectual property rights and expects users to do the same. If you believe
                 content available through Topiqo infringes your copyright, send a <strong>DMCA Notice</strong>{" "}
-                to <a className="link" href="mailto:legal@topiqo.fr">legal@topiqo.fr</a> including:
+                to <a className="link" href="mailto:contact@topiqo.fr">contact@topiqo.fr</a> including:
               </p>
               <ol>
                 <li>Your physical/electronic signature (or that of an authorized representative).</li>
@@ -547,7 +547,7 @@ export default function Terms({ lang = "fr" }) {
           body: (
             <p>
               Topiqo — Legal Team •{" "}
-              <a className="link" href="mailto:legal@topiqo.fr">legal@topiqo.fr</a>
+              <a className="link" href="mailto:contact@topiqo.fr">contact@topiqo.fr</a>
             </p>
           ),
         },
