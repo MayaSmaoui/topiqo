@@ -32,8 +32,12 @@ export default function Terms({ lang = "fr" }) {
                 <li>Vous devez avoir au moins <strong>13 ans</strong> pour utiliser Topiqo.</li>
                 <li>En vous inscrivant, vous confirmez satisfaire à cette condition d’âge.</li>
                 <li>
-                  Si nous découvrons que vous avez moins de 13 ans ou que votre âge a été
-                  <em> mal déclaré</em>, nous pouvons <strong>résilier</strong> immédiatement votre compte.
+                  Si vous êtes mineur·e, vous déclarez disposer, lorsque requis par la loi, de l’autorisation
+                  d’un parent ou représentant légal.
+                </li>
+                <li>
+                  Si nous découvrons que vous avez moins de 13 ans ou que votre âge a été{" "}
+                  <em>mal déclaré</em>, nous pouvons <strong>résilier</strong> immédiatement votre compte.
                 </li>
                 <li>
                   Vous êtes responsable de la <strong>confidentialité</strong> de vos identifiants et de toute
@@ -50,17 +54,25 @@ export default function Terms({ lang = "fr" }) {
             <>
               <p>
                 Topiqo fournit des outils éducatifs, notamment des notes générées par IA, des quiz, des
-                exercices et des feuilles de route d’étude. Le Service est destiné à un <strong>usage
-                éducatif personnel et non commercial</strong>.
+                exercices et des feuilles de route d’étude (parcours). Le Service est destiné à un{" "}
+                <strong>usage éducatif personnel et non commercial</strong>.
               </p>
+
+              <p>
+                <strong>Important :</strong> les contenus proposés (y compris ceux générés par des technologies
+                d’intelligence artificielle) sont fournis à titre d’aide à l’apprentissage. Ils ne constituent
+                ni des réponses officielles, ni une correction certifiée, ni un conseil professionnel, et ne
+                garantissent pas la réussite à un examen.
+              </p>
+
               <p>Vous vous engagez à ne pas&nbsp;:</p>
               <ul>
                 <li>Copier, distribuer, revendre ou monétiser les contenus de Topiqo sans autorisation.</li>
                 <li>Utiliser des outils automatisés (bots, scrapers, crawlers) pour accéder au Service.</li>
-                <li>Téléverser des contenus illégaux, nuisibles ou contrefaisants.</li>
+                <li>Téléverser des contenus illégaux, nuisibles, trompeurs ou contrefaisants.</li>
                 <li>
                   Utiliser Topiqo pour faciliter la <strong>malhonnêteté académique</strong> (par ex. tricher
-                  à un examen).
+                  à un examen, plagier, ou diffuser des sujets d’examen).
                 </li>
               </ul>
             </>
@@ -72,13 +84,18 @@ export default function Terms({ lang = "fr" }) {
           body: (
             <>
               <ul>
-                <li>Certaines fonctionnalités peuvent être gratuites ; d’autres nécessitent un abonnement.</li>
+                <li>
+                  Certaines fonctionnalités peuvent être gratuites ; d’autres nécessitent un abonnement
+                  <strong> Premium</strong>.
+                </li>
                 <li>
                   Les abonnements sont gérés via <strong>Apple App Store</strong> ou{" "}
                   <strong>Google Play Store</strong> et se <strong>renouvellent automatiquement</strong> sauf
                   annulation dans les réglages de votre compte store.
                 </li>
-                <li>Les paiements sont traités par Apple/Google ; Topiqo ne stocke pas les données de carte.</li>
+                <li>
+                  Les paiements sont traités par Apple/Google ; Topiqo ne stocke pas les données de carte.
+                </li>
                 <li>Les remboursements suivent les politiques d’Apple/Google.</li>
               </ul>
             </>
@@ -91,12 +108,13 @@ export default function Terms({ lang = "fr" }) {
             <>
               <ul>
                 <li>
-                  Vous pouvez téléverser des notes, textes ou autres entrées (« <em>Contenu utilisateur</em>
-                  ») pour générer du matériel d’étude.
+                  Vous pouvez téléverser des notes, textes, images, ou autres entrées («{" "}
+                  <em>Contenu utilisateur</em> ») pour générer du matériel d’étude.
                 </li>
                 <li>
                   Les <strong>téléversements bruts</strong> (notes, images, audio) sont traités en temps réel
-                  puis <strong>supprimés définitivement</strong> après traitement.
+                  puis <strong>supprimés définitivement</strong> après traitement,{" "}
+                  <strong>sauf obligation légale contraire</strong>.
                 </li>
                 <li>
                   Les <strong>sorties générées</strong> (quiz, leçons, exercices) peuvent être enregistrées
@@ -104,7 +122,34 @@ export default function Terms({ lang = "fr" }) {
                 </li>
                 <li>
                   Vous garantissez que votre contenu ne porte pas atteinte aux droits de tiers (dont droit
-                  d’auteur).
+                  d’auteur) et que vous disposez des autorisations nécessaires pour le téléverser.
+                </li>
+              </ul>
+            </>
+          ),
+        },
+        {
+          id: "privacy",
+          h: "6. Données personnelles (RGPD) et confidentialité",
+          body: (
+            <>
+              <p>
+                Topiqo traite des données personnelles conformément au RGPD et aux lois applicables. Pour
+                comprendre quelles données sont collectées, à quelles fins, et pendant combien de temps, veuillez
+                consulter notre <a className="link" href="/privacy">Politique de confidentialité</a>.
+              </p>
+              <ul>
+                <li>
+                  Les traitements peuvent être fondés notamment sur l’exécution du contrat (fourniture du Service),
+                  votre consentement, et le respect de nos obligations légales.
+                </li>
+                <li>
+                  Vous disposez de droits d’accès, de rectification, d’effacement, de limitation, d’opposition et de
+                  portabilité, dans les conditions prévues par la loi.
+                </li>
+                <li>
+                  Pour exercer vos droits ou poser une question, contactez-nous via{" "}
+                  <a className="link" href="mailto:legal@topiqo.fr">legal@topiqo.fr</a>.
                 </li>
               </ul>
             </>
@@ -112,7 +157,7 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "dmca",
-          h: "6. Droit d’auteur et procédure de notification (DMCA)",
+          h: "7. Droit d’auteur et procédure de notification (DMCA)",
           body: (
             <>
               <p>
@@ -146,18 +191,19 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "ip",
-          h: "7. Propriété intellectuelle",
+          h: "8. Propriété intellectuelle",
           body: (
             <p>
               Tous les droits, titres et intérêts sur le Service et ses contenus (hors Contenu utilisateur)
-              appartiennent à Topiqo et ses concédants. Une licence <strong>limitée, non exclusive et non
-              transférable</strong> vous est concédée pour un usage d’étude personnelle.
+              appartiennent à Topiqo et ses concédants. Une licence{" "}
+              <strong>limitée, non exclusive et non transférable</strong> vous est concédée pour un usage d’étude
+              personnelle.
             </p>
           ),
         },
         {
           id: "integrity",
-          h: "8. Intégrité académique",
+          h: "9. Intégrité académique",
           body: (
             <ul>
               <li>Topiqo est conçu pour <strong>apprendre</strong>, pas pour tricher.</li>
@@ -171,17 +217,20 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "termination",
-          h: "9. Résiliation",
+          h: "10. Résiliation",
           body: (
             <p>
               Nous pouvons suspendre ou résilier votre accès au Service en cas de violation des présentes,
-              d’abus du Service ou d’activité illégale.
+              d’abus du Service ou d’activité illégale. En cas de suppression du compte (par vous ou par nous),
+              les données personnelles sont supprimées ou anonymisées conformément à notre{" "}
+              <a className="link" href="/privacy">Politique de confidentialité</a> et aux obligations légales
+              applicables.
             </p>
           ),
         },
         {
           id: "warranty",
-          h: "10. Exclusion de garanties",
+          h: "11. Exclusion de garanties",
           body: (
             <p>
               Le Service est fourni « <em>en l’état</em> » sans garantie d’aucune sorte, expresse ou
@@ -192,7 +241,7 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "liability",
-          h: "11. Limitation de responsabilité",
+          h: "12. Limitation de responsabilité",
           body: (
             <p>
               Dans toute la mesure permise par la loi, Topiqo ne pourra être tenue responsable des dommages
@@ -203,7 +252,7 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "law",
-          h: "12. Droit applicable",
+          h: "13. Droit applicable",
           body: (
             <p>
               Les présentes sont régies par le droit français et le droit de l’Union européenne applicable.
@@ -214,7 +263,7 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "changes",
-          h: "13. Modifications des conditions",
+          h: "14. Modifications des conditions",
           body: (
             <p>
               Nous pouvons mettre à jour ces Conditions périodiquement. En cas de changement important, nous
@@ -225,7 +274,7 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "contact",
-          h: "14. Nous contacter",
+          h: "15. Nous contacter",
           body: (
             <p>
               Topiqo — Équipe juridique •{" "}
@@ -239,8 +288,7 @@ export default function Terms({ lang = "fr" }) {
     en: {
       brand: "Topiqo",
       title: "Terms of Use",
-      subtitle:
-        "Rules governing access to and use of the Topiqo app and website.",
+      subtitle: "Rules governing access to and use of the Topiqo app and website.",
       updated: "Last updated: September 9, 2025",
       toc: "Contents",
       sections: [
@@ -265,8 +313,12 @@ export default function Terms({ lang = "fr" }) {
                 <li>You must be at least <strong>13 years old</strong> to use Topiqo.</li>
                 <li>By registering, you confirm you meet this minimum age requirement.</li>
                 <li>
-                  If we discover you are under 13 or misrepresented your age, we may
-                  <strong> terminate</strong> your account.
+                  If you are a minor, you represent that you have permission from a parent or legal guardian
+                  where required by law.
+                </li>
+                <li>
+                  If we discover you are under 13 or misrepresented your age, we may <strong>terminate</strong>{" "}
+                  your account.
                 </li>
                 <li>You are responsible for keeping your login credentials confidential.</li>
               </ul>
@@ -280,15 +332,24 @@ export default function Terms({ lang = "fr" }) {
             <>
               <p>
                 Topiqo provides educational tools, including AI-generated notes, quizzes, exercises, and study
-                roadmaps. The Service is for <strong>personal, non-commercial educational use</strong> only.
+                roadmaps (learning paths). The Service is for{" "}
+                <strong> personal, non-commercial educational use</strong> only.
               </p>
+
+              <p>
+                <strong>Important:</strong> Content provided through Topiqo (including content generated using AI)
+                is offered as learning support only. It is not official exam material, not a certified answer key,
+                and does not guarantee exam results.
+              </p>
+
               <p>You agree not to:</p>
               <ul>
                 <li>Copy, distribute, resell, or monetize Topiqo content without authorization.</li>
                 <li>Use automated tools (bots, scrapers, crawlers) to access the Service.</li>
-                <li>Upload illegal, harmful, or infringing content.</li>
+                <li>Upload illegal, harmful, misleading, or infringing content.</li>
                 <li>
-                  Use Topiqo to facilitate <strong>academic dishonesty</strong> (e.g., cheating on exams).
+                  Use Topiqo to facilitate <strong>academic dishonesty</strong> (e.g., cheating, plagiarism, or
+                  sharing exam prompts).
                 </li>
               </ul>
             </>
@@ -300,7 +361,7 @@ export default function Terms({ lang = "fr" }) {
           body: (
             <>
               <ul>
-                <li>Some features may be free; premium features require a paid subscription.</li>
+                <li>Some features may be free; premium features require a paid <strong>Premium</strong> subscription.</li>
                 <li>
                   Subscriptions are managed via the <strong>Apple App Store</strong> or{" "}
                   <strong>Google Play Store</strong> and <strong>auto-renew</strong> unless cancelled in your
@@ -319,12 +380,12 @@ export default function Terms({ lang = "fr" }) {
             <>
               <ul>
                 <li>
-                  You may upload notes, text, or other inputs (“<em>User Content</em>”) to generate study
-                  materials.
+                  You may upload notes, text, images, audio, or other inputs (“<em>User Content</em>”) to
+                  generate study materials.
                 </li>
                 <li>
-                  <strong>Raw uploads</strong> (notes, images, audio) are processed in real time and then
-                  <strong> permanently deleted</strong>.
+                  <strong>Raw uploads</strong> are processed in real time and then <strong>permanently deleted</strong>{" "}
+                  after processing, <strong>unless legal obligations require otherwise</strong>.
                 </li>
                 <li>
                   <strong>Generated outputs</strong> (quizzes, lessons, exercises) may be stored in your
@@ -332,7 +393,34 @@ export default function Terms({ lang = "fr" }) {
                 </li>
                 <li>
                   You remain responsible for ensuring your content does not infringe third-party rights
-                  (including copyright).
+                  (including copyright) and that you have the necessary permissions to upload it.
+                </li>
+              </ul>
+            </>
+          ),
+        },
+        {
+          id: "privacy",
+          h: "6. Personal Data (GDPR) & Privacy",
+          body: (
+            <>
+              <p>
+                Topiqo processes personal data in accordance with the GDPR and applicable laws. To understand what
+                data is collected, for what purposes, and how long it is retained, please consult our{" "}
+                <a className="link" href="/privacy">Privacy Policy</a>.
+              </p>
+              <ul>
+                <li>
+                  Processing may rely on contract performance (providing the Service), your consent, and compliance
+                  with legal obligations.
+                </li>
+                <li>
+                  You may have rights of access, rectification, erasure, restriction, objection, and portability,
+                  as provided by law.
+                </li>
+                <li>
+                  To exercise your rights or ask questions, contact{" "}
+                  <a className="link" href="mailto:legal@topiqo.fr">legal@topiqo.fr</a>.
                 </li>
               </ul>
             </>
@@ -340,7 +428,7 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "dmca",
-          h: "6. Copyright & DMCA Notice",
+          h: "7. Copyright & DMCA Notice",
           body: (
             <>
               <p>
@@ -374,18 +462,18 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "ip",
-          h: "7. Intellectual Property",
+          h: "8. Intellectual Property",
           body: (
             <p>
               All rights, title, and interest in the Service and its content (excluding User Content) remain
-              with Topiqo and its licensors. You are granted a <strong>limited, non-exclusive, non-transferable
-              </strong> license for personal study purposes only.
+              with Topiqo and its licensors. You are granted a{" "}
+              <strong>limited, non-exclusive, non-transferable</strong> license for personal study purposes only.
             </p>
           ),
         },
         {
           id: "integrity",
-          h: "8. Academic Integrity",
+          h: "9. Academic Integrity",
           body: (
             <ul>
               <li>Topiqo is designed to help you <strong>learn</strong>, not to cheat.</li>
@@ -399,17 +487,19 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "termination",
-          h: "9. Termination",
+          h: "10. Termination",
           body: (
             <p>
               We may suspend or terminate your access to the Service if you violate these Terms, abuse the
-              Service, or engage in illegal activity.
+              Service, or engage in illegal activity. If an account is deleted (by you or by us), personal data
+              is deleted or anonymized in accordance with our{" "}
+              <a className="link" href="/privacy">Privacy Policy</a> and applicable legal obligations.
             </p>
           ),
         },
         {
           id: "warranty",
-          h: "10. Disclaimer of Warranties",
+          h: "11. Disclaimer of Warranties",
           body: (
             <p>
               The Service is provided <em>“as is”</em> without warranties of any kind, express or implied,
@@ -420,7 +510,7 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "liability",
-          h: "11. Limitation of Liability",
+          h: "12. Limitation of Liability",
           body: (
             <p>
               To the fullest extent permitted by law, Topiqo shall not be liable for any indirect, incidental,
@@ -431,7 +521,7 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "law",
-          h: "12. Governing Law",
+          h: "13. Governing Law",
           body: (
             <p>
               These Terms are governed by French law and applicable EU law. Any dispute shall be submitted to
@@ -442,7 +532,7 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "changes",
-          h: "13. Changes to the Terms",
+          h: "14. Changes to the Terms",
           body: (
             <p>
               We may update these Terms from time to time. For material changes, we will notify users in-app
@@ -453,7 +543,7 @@ export default function Terms({ lang = "fr" }) {
         },
         {
           id: "contact",
-          h: "14. Contact us",
+          h: "15. Contact us",
           body: (
             <p>
               Topiqo — Legal Team •{" "}
