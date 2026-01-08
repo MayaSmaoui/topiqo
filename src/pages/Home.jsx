@@ -1,6 +1,6 @@
 // src/pages/Home.jsx
 import FeaturesShowcase from '../FeaturesShowcase';
-import topiGif from '../assets/Topi.gif';
+import topiGif from '../assets/topiqo-wave-blank.gif';
 
 export default function Home({ t, lang }) {
   return (
