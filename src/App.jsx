@@ -12,6 +12,8 @@ import Privacy from './pages/Privacy';
 import Legal from './pages/Legal';
 import Download from './pages/Download';
 import Terms from './pages/Terms';
+import DeleteAccount from './pages/DeleteAccount';
+
 
 // Textes FR / EN
 const TEXTS = {
@@ -31,7 +33,8 @@ const TEXTS = {
       "Contact",
       "Confidentialité",
       "Mentions légales",
-      "Conditions d'utilisation"
+      "Conditions d'utilisation",
+      "Suppression du compte"
     ]
   },
   en: {
@@ -50,7 +53,8 @@ const TEXTS = {
       "Contact",
       "Privacy",
       "Legal",
-      "Terms"
+      "Terms", 
+      "Delete account"
     ]
   }
 };
@@ -171,16 +175,18 @@ function App() {
 
       {/* ROUTES */}
       <Routes>
-        <Route path="/" element={<Home t={t} lang={lang} setLang={setLang} />} />
-        <Route path="/login" element={<Login lang={lang} />} />
-        <Route path="/signup" element={<Signup lang={lang} />} />
-        <Route path="/help" element={<Help lang={lang} />} />
-        <Route path="/contact" element={<Contact lang={lang} />} />
-        <Route path="/privacy" element={<Privacy lang={lang} />} />
-        <Route path="/legal" element={<Legal lang={lang} />} />
-        <Route path="/download" element={<Download lang={lang} />} />
-        <Route path="/terms" element={<Terms lang={lang} />} />
-      </Routes>
+    <Route path="/" element={<Home t={t} lang={lang} setLang={setLang} />} />
+    <Route path="/login" element={<Login lang={lang} />} />
+    <Route path="/signup" element={<Signup lang={lang} />} />
+    <Route path="/help" element={<Help lang={lang} />} />
+    <Route path="/contact" element={<Contact lang={lang} />} />
+    <Route path="/privacy" element={<Privacy lang={lang} />} />
+    <Route path="/legal" element={<Legal lang={lang} />} />
+    <Route path="/download" element={<Download lang={lang} />} />
+    <Route path="/terms" element={<Terms lang={lang} />} />
+    <Route path="/delete-account" element={<DeleteAccount lang={lang} />} /> {/* 👈 nouvelle page */}
+  </Routes>
+
 
       {/* FOOTER */}
       <footer className="site-footer">
@@ -206,12 +212,15 @@ function App() {
                 { label: t.links[3], to: "/contact" },
                 { label: t.links[6], to: "/terms" },
                 { label: t.links[4], to: "/privacy" },
-                { label: t.links[5], to: "/legal" }
+                { label: t.links[5], to: "/legal" },
+                { label: t.links[7], to: "/delete-account" }   // 👈 NOUVELLE LIGNE
               ].map((item, i) => (
                 <Link key={i} to={item.to} onClick={goTop}>
                   {item.label}
                 </Link>
               ))}
+
+
 
             </nav>
           </div>
