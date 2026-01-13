@@ -204,25 +204,23 @@ function App() {
 
             {/* >>> Footer links (correction: Terms pointe vers /terms) */}
             <nav className="footer-col">
-              <h4>{lang === "fr" ? "Liens" : "Links"}</h4>
-              {[
-                { label: t.links[0], to: "/#features" },
-                { label: t.links[1], to: "/download" },
-                { label: t.links[2], to: "/help" },
-                { label: t.links[3], to: "/contact" },
-                { label: t.links[6], to: "/terms" },
-                { label: t.links[4], to: "/privacy" },
-                { label: t.links[5], to: "/legal" },
-                { label: t.links[7], to: "/delete-account" }   // 👈 NOUVELLE LIGNE
-              ].map((item, i) => (
-                <Link key={i} to={item.to} onClick={goTop}>
-                  {item.label}
-                </Link>
-              ))}
+            <h4>{lang === "fr" ? "Liens" : "Links"}</h4>
+            {[
+              { label: t.links[0], to: "/#features" },
+              { label: t.links[1], to: "/download" },
+              { label: t.links[2], to: "/help" },
+              { label: t.links[3], to: "/contact" },
+              { label: t.links[6], to: "/terms" },
+              { label: t.links[4], to: "/privacy" },
+              { label: t.links[5], to: "/legal" },
+              { label: t.links[7], to: "/delete-account" } // 👈 NOUVEAU LIEN
+            ].map((item, i) => (
+              <Link key={i} to={item.to} onClick={goTop}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
-
-
-            </nav>
           </div>
 
           <div className="footer-bottom">
