@@ -184,7 +184,7 @@ function App() {
     <Route path="/legal" element={<Legal lang={lang} />} />
     <Route path="/download" element={<Download lang={lang} />} />
     <Route path="/terms" element={<Terms lang={lang} />} />
-    <Route path="/delete-account" element={<DeleteAccount lang={lang} />} /> {/* 👈 nouvelle page */}
+    <Route path="/delete-account" element={<DeleteAccount lang={lang} />} />
   </Routes>
 
 
@@ -213,7 +213,7 @@ function App() {
               { label: t.links[6], to: "/terms" },
               { label: t.links[4], to: "/privacy" },
               { label: t.links[5], to: "/legal" },
-              { label: t.links[7], to: "/delete-account" } // 👈 NOUVEAU LIEN
+              { label: t.links[7], to: "/delete-account" }
             ].map((item, i) => (
               <Link key={i} to={item.to} onClick={goTop}>
                 {item.label}
