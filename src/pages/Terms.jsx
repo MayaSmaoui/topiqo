@@ -65,6 +65,24 @@ export default function Terms({ lang = "fr" }) {
                 garantissent pas la réussite à un examen.
               </p>
 
+              <p>
+                <strong>Limites d’utilisation :</strong> sauf mention contraire dans l’app, chaque compte
+                dispose d’un maximum de <strong>5 générations de contenus par période de 24&nbsp;heures</strong>{" "}
+                (par exemple&nbsp;: création de parcours, fiches, quiz, etc.). Une génération est comptabilisée
+                dès lors que vous lancez la demande, y compris si le résultat ne vous convient pas, contient
+                des erreurs ou est interrompu.
+              </p>
+
+              <p>
+                Les contenus générés automatiquement peuvent comporter des erreurs, des approximations ou des
+                informations obsolètes. Vous restez seul·e responsable de la vérification des résultats, de
+                leur interprétation et de l’usage que vous en faites (notamment pour préparer un examen, un
+                devoir ou un concours). Topiqo ne garantit pas l’exactitude des contenus générés et ne pourra
+                être tenue responsable d’une note, d’un résultat ou d’une décision prise sur la base de ces
+                contenus, et une génération jugée «&nbsp;mauvaise&nbsp;» ou incomplète ne donne droit à aucun
+                remboursement.
+              </p>
+
               <p>Vous vous engagez à ne pas&nbsp;:</p>
               <ul>
                 <li>Copier, distribuer, revendre ou monétiser les contenus de Topiqo sans autorisation.</li>
@@ -97,6 +115,12 @@ export default function Terms({ lang = "fr" }) {
                   Les paiements sont traités par Apple/Google ; Topiqo ne stocke pas les données de carte.
                 </li>
                 <li>Les remboursements suivent les politiques d’Apple/Google.</li>
+                <li>
+                  Sauf disposition légale impérative ou politique différente appliquée par Apple/Google,{" "}
+                  <strong>tous les paiements sont définitifs et non remboursables</strong>, y compris en cas de
+                  mauvaise utilisation du Service, de limites d’usage atteintes (par exemple les 5 générations
+                  par 24&nbsp;heures) ou de contenus générés jugés insatisfaisants, incomplets ou erronés.
+                </li>
               </ul>
             </>
           ),
@@ -342,6 +366,21 @@ export default function Terms({ lang = "fr" }) {
                 and does not guarantee exam results.
               </p>
 
+              <p>
+                <strong>Usage limits:</strong> unless stated otherwise in the app, each account is limited to a
+                maximum of <strong>5 content generations per 24-hour period</strong> (for example: paths, notes,
+                quizzes, etc.). A generation is counted as soon as you start the request, including where the
+                result is unsatisfactory, contains errors, or is interrupted.
+              </p>
+
+              <p>
+                Automatically generated content may contain errors, approximations, or outdated information. You
+                remain solely responsible for checking and interpreting the results and for any use you make of
+                them (including for exam, assignment, or competition preparation). Topiqo does not guarantee the
+                accuracy of generated content and cannot be held liable for any grade, outcome, or decision based
+                on such content, and a “bad” or incomplete generation does not entitle you to any refund.
+              </p>
+
               <p>You agree not to:</p>
               <ul>
                 <li>Copy, distribute, resell, or monetize Topiqo content without authorization.</li>
@@ -369,6 +408,12 @@ export default function Terms({ lang = "fr" }) {
                 </li>
                 <li>Payments are processed by Apple/Google; Topiqo does not store card details.</li>
                 <li>Refunds are subject to Apple/Google policies.</li>
+                <li>
+                  Except where required by mandatory law or by different Apple/Google store policies,{" "}
+                  <strong>all payments are final and non-refundable</strong>, including in cases of misuse of the
+                  Service, exhausted usage limits (for example, the 5 generations per 24-hour period), or
+                  generated content that you consider unsatisfactory, incomplete, or incorrect.
+                </li>
               </ul>
             </>
           ),
@@ -384,7 +429,8 @@ export default function Terms({ lang = "fr" }) {
                   generate study materials.
                 </li>
                 <li>
-                  <strong>Raw uploads</strong> are processed in real time and then <strong>permanently deleted</strong>{" "}
+                  <strong>Raw uploads</strong> are processed in real time and then{" "}
+                  <strong>permanently deleted</strong>{" "}
                   after processing, <strong>unless legal obligations require otherwise</strong>.
                 </li>
                 <li>
