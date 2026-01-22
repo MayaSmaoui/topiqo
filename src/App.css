@@ -1050,5 +1050,8 @@ body[data-theme="dark"] .nav-link:hover { color: var(--topi-yellow); }
 body[data-theme="dark"] .burger span{ background: var(--icon); }
 /* … (pas besoin de dupliquer tout : le bloc @media ci-dessus couvre déjà les classes via variables) */
 
+.download-button {
+  color: #000000 !important;
+}
 
 
