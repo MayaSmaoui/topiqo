@@ -25,7 +25,7 @@ const TEXTS = {
     login: "Se connecter",
     signup: "Créer un compte",
     footerText:
-      "L’app qui transforme le bac et le brevet en un jeu. Progresse chaque jour, garde la motivation, réussis avec le sourire.",
+      "Maîtrise n'importe quel sujet avec Topiqo!",
     links: [
       "Accueil",
       "Télécharger l’app",
@@ -40,7 +40,7 @@ const TEXTS = {
   en: {
     heroTitle: "Welcome to Topiqo",
     heroText:
-      "Topiqo turns high school exams into a game. Earn points, unlock levels, and make progress every single day with joy!",
+      "Master any topic with Topiqo!",
     download: "📱 Download the app",
     login: "Log in",
     signup: "Sign up",
