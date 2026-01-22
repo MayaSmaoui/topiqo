@@ -154,6 +154,7 @@ html, body, #root {
   overflow: hidden;
   box-shadow: 0 6px 0 var(--topi-yellow-dark);
   transition: transform 0.2s ease;
+  color: #000000 !important;
 }
 .download-button::after {
   content: "";
@@ -1050,8 +1051,6 @@ body[data-theme="dark"] .nav-link:hover { color: var(--topi-yellow); }
 body[data-theme="dark"] .burger span{ background: var(--icon); }
 /* … (pas besoin de dupliquer tout : le bloc @media ci-dessus couvre déjà les classes via variables) */
 
-.download-button {
-  color: #000000 !important;
-}
+
 
 
