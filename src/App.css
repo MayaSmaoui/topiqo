@@ -155,6 +155,10 @@ html, body, #root {
   box-shadow: 0 6px 0 var(--topi-yellow-dark);
   transition: transform 0.2s ease;
   color: #000000 !important;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .download-button::after {
   content: "";
