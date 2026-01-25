@@ -1,8 +1,20 @@
-export default function Download({ lang='fr' }){
+export default function Download({ lang = 'fr' }) {
   const T = {
-    fr: { title:"Télécharger l’app", subtitle:"Disponible bientôt sur l’App Store et Google Play.", store:'M’alerter à la sortie', how:'Comment installer en bêta ?', steps:['Rejoins TestFlight (iOS)', 'Accède à la bêta Android', 'Active les notifications de sortie'] },
-    en: { title:'Download the app', subtitle:'Coming soon on the App Store and Google Play.', store:'Notify me at launch', how:'How to install beta?', steps:['Join TestFlight (iOS)', 'Get Android beta', 'Enable launch notifications'] }
+    fr: {
+      title: "Télécharger l’app",
+      subtitle: "Disponible sur l’App Store. Version Google Play disponible bientôt.",
+      store: "Télécharger sur l’App Store",
+      google: "Version Google Play bientôt disponible"
+    },
+    en: {
+      title: "Download the app",
+      subtitle: "Available on the App Store. Google Play version coming soon.",
+      store: "Download on the App Store",
+      google: "Google Play version coming soon"
+    }
   }[lang];
+
+  const appStoreLink = "https://apps.apple.com/gb/app/topiqo/id6748356744";
 
   return (
     <main className="page">
@@ -14,12 +26,17 @@ export default function Download({ lang='fr' }){
 
       <div className="card download">
         <div className="store-row">
-          <a className="btn btn-primary" href="#">{T.store}</a>
+          <a
+            className="btn btn-primary"
+            href={appStoreLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {T.store}
+          </a>
         </div>
-        <h3>{T.how}</h3>
-        <ol className="steps">
-          {T.steps.map((s,i)=> <li key={i}>{s}</li>)}
-        </ol>
+
+        <p className="google-info">{T.google}</p>
       </div>
     </main>
   );
