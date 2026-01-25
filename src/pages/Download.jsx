@@ -17,17 +17,17 @@ export default function Download({ lang = 'fr' }) {
   const appStoreLink = "https://apps.apple.com/gb/app/topiqo/id6748356744";
 
   return (
-    <main className="page">
+    <main className="page download-page">
       <div className="page-hero">
         <span className="chip">Topiqo</span>
         <h1>{T.title}</h1>
         <p>{T.subtitle}</p>
       </div>
 
-      <div className="card download">
-        <div className="store-row">
+      <div className="download-card">
+        <div className="download-button-wrapper">
           <a
-            className="btn btn-primary"
+            className="btn btn-primary download-btn"
             href={appStoreLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -36,7 +36,7 @@ export default function Download({ lang = 'fr' }) {
           </a>
         </div>
 
-        <p className="google-info">{T.google}</p>
+        <p className="google-coming-soon">{T.google}</p>
       </div>
     </main>
   );

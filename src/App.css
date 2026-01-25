@@ -1058,3 +1058,37 @@ body[data-theme="dark"] .burger span{ background: var(--icon); }
 
 
 
+.download-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.download-card {
+  padding: 2rem;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  max-width: 420px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.download-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.download-btn {
+  font-size: 1.1rem;
+  padding: 0.9rem 1.6rem;
+  border-radius: 12px;
+}
+
+.google-coming-soon {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
