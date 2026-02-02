@@ -131,21 +131,49 @@ html, body, #root {
   font-size: 2.8rem;
   font-weight: 800;
   color: var(--text-dark);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 .hero p {
   max-width: 600px;
-  margin: 0 auto 2rem;
+  margin: 0 auto;
   color: #555;
   font-size: 1.1rem;
   line-height: 1.6;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.85);
+  margin-bottom: 1rem !important;
+}
+
+.hero-body {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 0.5rem !important;
+}
+
+.hero-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7B5EEA;
+  margin-bottom: 2rem !important;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* Bouton Download animé */
 .download-button {
   background: var(--topi-yellow);
   border: none;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 1.5rem;
   border-radius: 999px;
   font-weight: bold;
   font-size: 1rem;
@@ -154,11 +182,39 @@ html, body, #root {
   overflow: hidden;
   box-shadow: 0 6px 0 var(--topi-yellow-dark);
   transition: transform 0.2s ease;
-  color: #000000 !important;
-
+  color: #0d0f14;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.5rem;
+}
+
+.store-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.download-button.disabled {
+  background: #e0e0e0;
+  box-shadow: 0 6px 0 #b0b0b0;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.download-button.disabled:hover {
+  transform: none;
+  box-shadow: 0 6px 0 #b0b0b0;
+}
+
+.coming-soon-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: #7B5EEA;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  margin-left: 0.25rem;
+  text-transform: uppercase;
 }
 .download-button::after {
   content: "";
@@ -867,228 +923,4 @@ color: var(--topi-yellow) !important; }
 /* garde les liens topbar visibles desktop ; masque (optionnel) sur mobile */
 @media (max-width: 980px){
   .nav-links{ display:none; }  /* supprime cette ligne si tu veux aussi voir les liens sur mobile */
-}
-
-
-@media (max-width: 768px) {
-  .download-button,
-  .download-button:link,
-  .download-button:visited {
-    color: #0d0f14 !important; /* texte noir */
-  }
-}
-
-/* =====================
-   DARK MODE — Topiqo
-   Auto: @media (prefers-color-scheme: dark)
-   Manual override: body[data-theme="dark"]
-   ===================== */
-
-/* déclare que la page supporte les deux thèmes (utile pour les form controls natifs) */
-:root { color-scheme: light dark; }
-
-/* palette dark */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0c0f14;
-    --bg-soft: #10151d;
-    --surface: #121823;
-    --surface-2: #141b26;
-    --card: #111720;
-    --muted: #a7b0c0;
-    --muted-2: #8f98a7;
-    --border: rgba(255,255,255,.08);
-    --shadow: 0 12px 28px rgba(0,0,0,.55);
-    --text-dark: #e9edf6;  /* remplace le #222 de ton thème clair */
-    --text-light: #ffffff;
-    --link: #e9edf6;
-    --icon: #e9edf6;
-    --overlay: rgba(0,0,0,.5);
-
-    /* ta couleur brand reste la même mais on fonce l’ombre */
-    --topi-yellow: #fccc2d;
-    --topi-yellow-dark: #b88c00;
-  }
-
-  /* ====== bases ====== */
-  html, body { background: var(--bg); color: var(--text-dark); }
-  a { color: var(--link); }
-  .link { color: var(--link); }
-
-  /* ====== navbar + drawer ====== */
-  .navbar { background: var(--bg-soft); border-bottom: 1px solid var(--border); }
-  .nav-link { color: var(--text-dark); }
-  .nav-link:hover { color: var(--topi-yellow); }
-  .signup-button { box-shadow: 0 6px 0 var(--topi-yellow-dark); }
-  .lang-toggle { border-color: var(--topi-yellow); color: var(--topi-yellow); }
-  .lang-toggle:hover { background: var(--topi-yellow); color: #0d0f14; }
-  .burger span{ background: var(--icon); }
-
-  .drawer-overlay { background: var(--overlay); }
-  .drawer { background: var(--surface); border-right: 1px solid var(--border); box-shadow: var(--shadow); }
-  .drawer-header .brand { color: var(--topi-yellow); }
-  .drawer-close {
-    background: var(--surface-2);
-    color: var(--text-dark);
-    border: 1px solid var(--border);
-    box-shadow: 0 8px 18px rgba(0,0,0,.45);
-  }
-  .drawer-link {
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    color: var(--text-dark);
-  }
-  .drawer-link:hover { background: rgba(255,255,255,.04); color: var(--topi-yellow) !important; }
-  .btn-ghost { background: transparent; border: 2px solid var(--topi-yellow); color: var(--text-dark); }
-  .btn-primary { background: var(--topi-yellow); box-shadow: 0 6px 0 var(--topi-yellow-dark); color:#0d0f14; }
-
-  /* ====== Hero ====== */
-  .hero { background: var(--bg); }
-  .hero h1 { color: var(--text-light); }
-  .hero p { color: var(--muted); }
-  .download-button { box-shadow: 0 6px 0 var(--topi-yellow-dark); color:#0d0f14; }
-  @media (max-width: 768px){
-    .download-button, .download-button:link, .download-button:visited { color:#0d0f14 !important; }
-  }
-
-  /* ====== Features ====== */
-  .features-showcase { background: var(--bg); }
-  .feature-text p { color: var(--muted); }
-  .feature-image img { filter: drop-shadow(0 8px 24px rgba(0,0,0,.55)); }
-
-  /* ====== Cards / Pages ====== */
-  .card,
-  .price-card,
-  .faq-item,
-  .auth-card,
-  .legal-card,
-  .privacy-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    color: var(--text-dark);
-  }
-
-  .input input, .input textarea {
-    background: var(--surface-2);
-    color: var(--text-dark);
-    border: 1px solid var(--border);
-  }
-  .input input::placeholder, .input textarea::placeholder { color: #9aa3b3; }
-  .hint, .privacy-note, .legal-note, .page-hero p { color: var(--muted); }
-  .notice.success { background: rgba(88,204,2,.14); color:#c9ffd2; }
-
-  /* ====== Pricing ====== */
-  .price-card small { color: var(--muted-2); }
-  .price-card .badge { background: rgba(252,204,45,.14); color: #f6e4a8; }
-  .price-card .badge-pop { background: rgba(88,204,2,.18); color:#cbf5c6; }
-  .price-card.highlight { outline: 3px solid rgba(252,204,45,.35); }
-
-  /* ====== FAQ ====== */
-  .faq-item p { color: var(--muted); }
-  .faq-item summary { color: var(--text-light); }
-
-  /* ====== Download ====== */
-  .download .store-row a { background: var(--surface-2); border: 1px solid var(--border); }
-
-  /* ====== Legal / Privacy heros & toc ====== */
-  .legal-hero,
-  .privacy-hero {
-    background: linear-gradient(135deg, #0f141d 0%, #0d121a 100%);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-  }
-  .legal-meta, .privacy-meta, .privacy-effective { color: var(--muted); }
-  .legal-toc-inner, .privacy-toc-inner {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-  }
-  .legal-toc-link, .privacy-toc-link { color: var(--text-dark); }
-  .legal-toc-link:hover, .privacy-toc-link:hover { background: rgba(255,255,255,.05); color: var(--text-light); }
-
-  /* ====== Footer ====== */
-  .site-footer{
-    color: var(--text-dark);
-    background:
-      radial-gradient(900px 360px at 14% -10%, rgba(252,204,45,.08), transparent 60%),
-      linear-gradient(180deg, var(--bg) 0%, #0a0e13 100%);
-    border-top: 1px solid var(--border);
-  }
-  .foot-wave path { fill: var(--bg); }
-  .footer-brand p{ color: var(--muted); }
-  .footer-col a{ color: #cfd6e4; }
-  .footer-col a:hover{ background: rgba(255,255,255,.05); }
-  .footer-bottom{ border-top: 1px solid var(--border); color: var(--muted); }
-
-  .ico{
-    background: var(--surface);
-    border: 1px solid var(--border);
-    box-shadow: 0 8px 18px rgba(0,0,0,.45);
-  }
-  .ico svg{ fill: var(--icon); }
-}
-
-/* ====== Manual override: force le dark si tu mets <body data-theme="dark"> ====== */
-body[data-theme="dark"] {
-  --bg: #0c0f14;
-  --bg-soft: #10151d;
-  --surface: #121823;
-  --surface-2: #141b26;
-  --card: #111720;
-  --muted: #a7b0c0;
-  --muted-2: #8f98a7;
-  --border: rgba(255,255,255,.08);
-  --shadow: 0 12px 28px rgba(0,0,0,.55);
-  --text-dark: #e9edf6;
-  --text-light: #ffffff;
-  --link: #e9edf6;
-  --icon: #e9edf6;
-  --overlay: rgba(0,0,0,.5);
-  --topi-yellow: #fccc2d;
-  --topi-yellow-dark: #b88c00;
-}
-/* on réapplique toutes les règles “dark” quand data-theme=dark est présent */
-body[data-theme="dark"] .navbar { background: var(--bg-soft); border-bottom:1px solid var(--border); }
-body[data-theme="dark"] .nav-link { color: var(--text-dark); }
-body[data-theme="dark"] .nav-link:hover { color: var(--topi-yellow); }
-body[data-theme="dark"] .burger span{ background: var(--icon); }
-/* … (pas besoin de dupliquer tout : le bloc @media ci-dessus couvre déjà les classes via variables) */
-
-
-
-
-.download-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.download-card {
-  padding: 2rem;
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  max-width: 420px;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.download-button-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.download-btn {
-  font-size: 1.1rem;
-  padding: 0.9rem 1.6rem;
-  border-radius: 12px;
-}
-
-.google-coming-soon {
-  color: #666;
-  font-size: 0.95rem;
-  margin-top: 0.5rem;
 }

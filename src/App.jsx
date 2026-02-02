@@ -4,31 +4,25 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
 import Help from './pages/Help';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Legal from './pages/Legal';
-import Download from './pages/Download';
 import Terms from './pages/Terms';
 import DeleteAccount from './pages/DeleteAccount';
-
 
 // Textes FR / EN
 const TEXTS = {
   fr: {
     heroTitle: "Bienvenue sur Topiqo",
-    heroText:
-      "Maîtrise n'importe quel sujet avec Topiqo!",
+    heroText: "Maîtrise n'importe quel sujet avec Topiqo!",
     download: "📱 Télécharger l'app",
     login: "Se connecter",
     signup: "Créer un compte",
-    footerText:
-      "Maîtrise n'importe quel sujet avec Topiqo!",
+    footerText: "Maîtrise n'importe quel sujet avec Topiqo!",
     links: [
       "Accueil",
-      "Télécharger l’app",
+      "Télécharger l'app",
       "Aide",
       "Contact",
       "Confidentialité",
@@ -39,13 +33,11 @@ const TEXTS = {
   },
   en: {
     heroTitle: "Welcome to Topiqo",
-    heroText:
-      "Master any topic with Topiqo!",
+    heroText: "Master any topic with Topiqo!",
     download: "📱 Download the app",
     login: "Log in",
     signup: "Sign up",
-    footerText:
-      "Master any topic with Topiqo!",
+    footerText: "Master any topic with Topiqo!",
     links: [
       "Home Page",
       "Download the app",
@@ -53,34 +45,33 @@ const TEXTS = {
       "Contact",
       "Privacy",
       "Legal",
-      "Terms", 
+      "Terms",
       "Delete account"
     ]
   }
 };
 
 function App() {
-  const [lang, setLang] = useState('fr');
+  const [lang, setLang] = useState(() => {
+    // Detect browser language, default to English
+    const browserLang = navigator.language || navigator.userLanguage || '';
+    return browserLang.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+  });
   const [menuOpen, setMenuOpen] = useState(false);
   const t = TEXTS[lang];
   const goTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   // Échap pour fermer
   useEffect(() => {
-    function onKey(e){ if(e.key === 'Escape') setMenuOpen(false); }
+    function onKey(e) { if (e.key === 'Escape') setMenuOpen(false); }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []);
+
   // Bloque le scroll quand le menu est ouvert
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
   }, [menuOpen]);
-
-  // Ferme le drawer quand on clique un lien du drawer
-  const closeAnd = (fn) => (e) => {
-    setMenuOpen(false);
-    if (typeof fn === 'function') fn(e);
-  };
 
   return (
     <BrowserRouter>
@@ -102,8 +93,6 @@ function App() {
           </div>
 
           <div className="nav-links">
-            <Link to="/login" className="nav-link">{t.login}</Link>
-            <Link to="/signup" className="signup-button">{t.signup}</Link>
             <button
               className="lang-toggle"
               onClick={() => setLang(lang === "fr" ? "en" : "fr")}
@@ -137,14 +126,12 @@ function App() {
           </button>
         </div>
 
-        {/* >>> Drawer links (ajout de Terms) */}
         <nav className="drawer-links">
           {[
-            { label: t.links[0], to: "/#features" }, // Home
-            { label: t.links[1], to: "/download" },  // Download
-            { label: t.links[2], to: "/help" },      // Help
-            { label: t.links[3], to: "/contact" },   // Contact
-            { label: t.links[6], to: "/terms" }      // Terms
+            { label: t.links[0], to: "/#features" },
+            { label: t.links[2], to: "/help" },
+            { label: t.links[3], to: "/contact" },
+            { label: t.links[6], to: "/terms" }
           ].map((item, i) => (
             <Link
               key={i}
@@ -155,13 +142,7 @@ function App() {
               {item.label}
             </Link>
           ))}
-
         </nav>
-
-        <div className="drawer-cta">
-          <Link to="/signup" className="btn btn-primary" onClick={closeAnd()}>{t.signup}</Link>
-          <Link to="/login" className="btn btn-ghost" onClick={closeAnd()}>{t.login}</Link>
-        </div>
 
         <div className="drawer-lang">
           <button
@@ -175,18 +156,14 @@ function App() {
 
       {/* ROUTES */}
       <Routes>
-    <Route path="/" element={<Home t={t} lang={lang} setLang={setLang} />} />
-    <Route path="/login" element={<Login lang={lang} />} />
-    <Route path="/signup" element={<Signup lang={lang} />} />
-    <Route path="/help" element={<Help lang={lang} />} />
-    <Route path="/contact" element={<Contact lang={lang} />} />
-    <Route path="/privacy" element={<Privacy lang={lang} />} />
-    <Route path="/legal" element={<Legal lang={lang} />} />
-    <Route path="/download" element={<Download lang={lang} />} />
-    <Route path="/terms" element={<Terms lang={lang} />} />
-    <Route path="/delete-account" element={<DeleteAccount lang={lang} />} />
-  </Routes>
-
+        <Route path="/" element={<Home t={t} lang={lang} setLang={setLang} />} />
+        <Route path="/help" element={<Help lang={lang} />} />
+        <Route path="/contact" element={<Contact lang={lang} />} />
+        <Route path="/privacy" element={<Privacy lang={lang} />} />
+        <Route path="/legal" element={<Legal lang={lang} />} />
+        <Route path="/terms" element={<Terms lang={lang} />} />
+        <Route path="/delete-account" element={<DeleteAccount lang={lang} />} />
+      </Routes>
 
       {/* FOOTER */}
       <footer className="site-footer">
@@ -199,34 +176,30 @@ function App() {
             <div className="footer-brand">
               <div className="brand-logo">Topiqo</div>
               <p>{t.footerText}</p>
-              <Link to="/signup" className="footer-cta">{t.signup}</Link>
             </div>
 
-            {/* >>> Footer links (correction: Terms pointe vers /terms) */}
             <nav className="footer-col">
-            <h4>{lang === "fr" ? "Liens" : "Links"}</h4>
-            {[
-              { label: t.links[0], to: "/#features" },
-              { label: t.links[1], to: "/download" },
-              { label: t.links[2], to: "/help" },
-              { label: t.links[3], to: "/contact" },
-              { label: t.links[6], to: "/terms" },
-              { label: t.links[4], to: "/privacy" },
-              { label: t.links[5], to: "/legal" },
-              { label: t.links[7], to: "/delete-account" }
-            ].map((item, i) => (
-              <Link key={i} to={item.to} onClick={goTop}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
+              <h4>{lang === "fr" ? "Liens" : "Links"}</h4>
+              {[
+                { label: t.links[0], to: "/#features" },
+                { label: t.links[2], to: "/help" },
+                { label: t.links[3], to: "/contact" },
+                { label: t.links[6], to: "/terms" },
+                { label: t.links[4], to: "/privacy" },
+                { label: t.links[5], to: "/legal" },
+                { label: t.links[7], to: "/delete-account" }
+              ].map((item, i) => (
+                <Link key={i} to={item.to} onClick={goTop}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
           </div>
 
           <div className="footer-bottom">
             <span>© {new Date().getFullYear()} Topiqo</span>
             <div className="socials">
-              <a className="ico" aria-label="Instagram" href="https://instagram.com/topiqo" target="_blank" rel="noreferrer">
+              <a className="ico" aria-label="Instagram" href="https://instagram.com/topiqo.fr" target="_blank" rel="noreferrer">
                 <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10a5 5 0 0 0 0-10zm6.5-.9a1.1 1.1 0 1 0 0 2.2a1.1 1.1 0 0 0 0-2.2zM12 9a3 3 0 1 1 0 6a3 3 0 0 1 0-6z"/></svg>
               </a>
               <a className="ico" aria-label="TikTok" href="https://tiktok.com/@topiqo" target="_blank" rel="noreferrer">
