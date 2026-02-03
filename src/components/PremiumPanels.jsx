@@ -5,15 +5,15 @@ import './PremiumPanels.css';
 // Import your video files - adjust paths as needed
 // You'll need to add these videos to your public folder or assets
 const VIDEOS = {
-  graphs: '/videos/graphs.mov',
-  pronounciation: '/videos/pronounciation.mov',
-  barchart: '/videos/barchart.mov',
-  truefalse: '/videos/truefalse.mov',
-  sentencetranslation: '/videos/sentencetranslation.mov',
-  completethecode: '/videos/completethecode.mov',
-  codequestion: '/videos/codequestion.mov',
-  ordering: '/videos/ordering.mov',
-  connectpairs: '/videos/connectpairs.mov',
+  graphs: '/videos2/graphs.mp4',
+  pronounciation: '/videos2/pronounciation.mp4',
+  barchart: '/videos2/barchart.mp4',
+  truefalse: '/videos2/truefalse.mp4',
+  sentencetranslation: '/videos2/sentencetranslation.mp4',
+  completethecode: '/videos2/completethecode.mp4',
+  codequestion: '/videos2/codequestion.mp4',
+  ordering: '/videos2/ordering.mp4',
+  connectpairs: '/videos2/connectpairs.mp4',
 };
 
 const TEXTS = {
