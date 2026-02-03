@@ -153,10 +153,14 @@ function ScrollIndicator({ text }) {
   );
 }
 
-// Panel 2: Features Slideshow
+// Panel 1: Features Slideshow
 function FeaturesPanel({ t, visible }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+  const slideshowRef = useRef(null);
 
+  // Auto-advance timer
   useEffect(() => {
     if (!visible) return;
     
@@ -165,7 +169,7 @@ function FeaturesPanel({ t, visible }) {
     }, 4000);
 
     return () => clearInterval(timer);
-  }, [visible]);
+  }, [visible, currentSlide]); // Reset timer when slide changes manually
 
   // Reset to first slide when panel becomes visible
   useEffect(() => {
@@ -174,7 +178,73 @@ function FeaturesPanel({ t, visible }) {
     }
   }, [visible]);
 
-  const slideKeys = Object.keys(t.slides);
+  // Handle touch/swipe
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const diff = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(diff) > minSwipeDistance) {
+      if (diff > 0) {
+        // Swipe left - next slide
+        setCurrentSlide(prev => (prev + 1) % SLIDESHOW_ITEMS.length);
+      } else {
+        // Swipe right - previous slide
+        setCurrentSlide(prev => (prev - 1 + SLIDESHOW_ITEMS.length) % SLIDESHOW_ITEMS.length);
+      }
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  // Handle mouse drag for desktop
+  const mouseStartX = useRef(null);
+  const isDragging = useRef(false);
+
+  const handleMouseDown = (e) => {
+    mouseStartX.current = e.clientX;
+    isDragging.current = true;
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+    // Optional: add visual feedback during drag
+  };
+
+  const handleMouseUp = (e) => {
+    if (!isDragging.current || mouseStartX.current === null) return;
+    
+    const diff = mouseStartX.current - e.clientX;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(diff) > minSwipeDistance) {
+      if (diff > 0) {
+        // Drag left - next slide
+        setCurrentSlide(prev => (prev + 1) % SLIDESHOW_ITEMS.length);
+      } else {
+        // Drag right - previous slide
+        setCurrentSlide(prev => (prev - 1 + SLIDESHOW_ITEMS.length) % SLIDESHOW_ITEMS.length);
+      }
+    }
+
+    mouseStartX.current = null;
+    isDragging.current = false;
+  };
+
+  const handleMouseLeave = () => {
+    isDragging.current = false;
+    mouseStartX.current = null;
+  };
 
   return (
     <section className={`premium-panel features-panel ${visible ? 'visible' : ''}`}>
@@ -197,7 +267,18 @@ function FeaturesPanel({ t, visible }) {
           ))}
         </div>
         
-        <div className="phone-slideshow">
+        <div 
+          className="phone-slideshow"
+          ref={slideshowRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          style={{ cursor: 'grab', userSelect: 'none' }}
+        >
           {SLIDESHOW_ITEMS.map((item, index) => (
             <div 
               key={item.key}
@@ -326,6 +407,21 @@ function RoadmapPanel({ t, visible }) {
           <div className="upload-chip">
             <span>🎤</span> Audio
           </div>
+          <div className="upload-chip">
+            <span>📊</span> PowerPoint
+          </div>
+          <div className="upload-chip">
+            <span>📝</span> Word
+          </div>
+          <div className="upload-chip">
+            <span>📈</span> Excel
+          </div>
+          <div className="upload-chip">
+            <span>📃</span> Text
+          </div>
+          <div className="upload-chip">
+            <span>💡</span> Just an idea
+          </div>
         </div>
 
         <p className={`roadmap-body ${showText ? 'show' : ''}`}>{t.roadmapBody}</p>
@@ -337,18 +433,48 @@ function RoadmapPanel({ t, visible }) {
 
 // Panel 3: Download
 function DownloadPanel({ t, visible }) {
+  const [showTitle, setShowTitle] = useState(false);
+  const [showSubtitle, setShowSubtitle] = useState(false);
+  const [showAppStore, setShowAppStore] = useState(false);
+  const [showPlayStore, setShowPlayStore] = useState(false);
+
+  useEffect(() => {
+    if (visible) {
+      setShowTitle(false);
+      setShowSubtitle(false);
+      setShowAppStore(false);
+      setShowPlayStore(false);
+
+      // Stagger animations
+      setTimeout(() => setShowTitle(true), 200);
+      setTimeout(() => setShowSubtitle(true), 450);
+      setTimeout(() => setShowAppStore(true), 700);
+      setTimeout(() => setShowPlayStore(true), 950);
+    } else {
+      setShowTitle(false);
+      setShowSubtitle(false);
+      setShowAppStore(false);
+      setShowPlayStore(false);
+    }
+  }, [visible]);
+
   return (
     <section className={`premium-panel download-panel ${visible ? 'visible' : ''}`}>
-      <div className="panel-content">
-        <h2 className="panel-title purple">{t.downloadTitle}</h2>
-        <p className="panel-subtitle">{t.downloadSubtitle}</p>
+      <div className="panel-content" style={{ opacity: 1, transform: 'none' }}>
+        <h2 className={`panel-title purple download-anim ${showTitle ? 'show' : ''}`}>{t.downloadTitle}</h2>
+        <p className={`panel-subtitle download-anim ${showSubtitle ? 'show' : ''}`}>{t.downloadSubtitle}</p>
         
         <div className="download-buttons-vertical">
-          <a href="https://apps.apple.com/us/app/topiqo/id6748356744" className="download-button-large" target="_blank" rel="noreferrer">
+          <a 
+            href="https://apps.apple.com/us/app/topiqo/id6748356744" 
+            className={`download-button-large download-anim ${showAppStore ? 'show' : ''}`} 
+            target="_blank" 
+            rel="noreferrer"
+          >
             <svg className="store-icon-large" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
             {t.appStore}
           </a>
-          <div className="download-button-large disabled">
+          <div className={`download-button-large disabled download-anim ${showPlayStore ? 'show' : ''}`}>
             <svg className="store-icon-large" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
             {t.playStore}
             <span className="coming-soon-badge">{t.comingSoon}</span>
