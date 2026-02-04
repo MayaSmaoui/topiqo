@@ -323,6 +323,10 @@ function RoadmapPanel({ t, visible }) {
 
   // Animate nodes one by one when panel becomes visible
   useEffect(() => {
+    const timeouts = [];
+
+    const clearAll = () => timeouts.forEach(clearTimeout);
+
     if (visible) {
       setVisibleNodes([]);
       setShowChips(false);
@@ -330,21 +334,25 @@ function RoadmapPanel({ t, visible }) {
       
       // Stagger node appearances
       items.forEach((_, index) => {
-        setTimeout(() => {
+        timeouts.push(setTimeout(() => {
           setVisibleNodes(prev => [...prev, index]);
-        }, 400 + index * 250); // Start after 400ms, then 250ms between each
+        }, 400 + index * 250)); // Start after 400ms, then 250ms between each
       });
 
       // Show chips after nodes
-      setTimeout(() => setShowChips(true), 400 + items.length * 250 + 200);
+      timeouts.push(setTimeout(() => setShowChips(true), 400 + items.length * 250 + 200));
       
       // Show text after chips
-      setTimeout(() => setShowText(true), 400 + items.length * 250 + 500);
+      timeouts.push(setTimeout(() => setShowText(true), 400 + items.length * 250 + 500));
     } else {
       setVisibleNodes([]);
       setShowChips(false);
       setShowText(false);
     }
+
+    return () => {
+      clearAll();
+    };
   }, [visible]);
 
   return (
@@ -439,23 +447,30 @@ function DownloadPanel({ t, visible }) {
   const [showPlayStore, setShowPlayStore] = useState(false);
 
   useEffect(() => {
+    const timeouts = [];
+
+    const clearAll = () => timeouts.forEach(clearTimeout);
+
     if (visible) {
       setShowTitle(false);
       setShowSubtitle(false);
       setShowAppStore(false);
       setShowPlayStore(false);
 
-      // Stagger animations
-      setTimeout(() => setShowTitle(true), 200);
-      setTimeout(() => setShowSubtitle(true), 450);
-      setTimeout(() => setShowAppStore(true), 700);
-      setTimeout(() => setShowPlayStore(true), 950);
+      timeouts.push(setTimeout(() => setShowTitle(true), 200));
+      timeouts.push(setTimeout(() => setShowSubtitle(true), 450));
+      timeouts.push(setTimeout(() => setShowAppStore(true), 700));
+      timeouts.push(setTimeout(() => setShowPlayStore(true), 950));
     } else {
       setShowTitle(false);
       setShowSubtitle(false);
       setShowAppStore(false);
       setShowPlayStore(false);
     }
+
+    return () => {
+      clearAll();
+    };
   }, [visible]);
 
   return (
@@ -524,11 +539,11 @@ export default function PremiumPanels({ lang = 'fr' }) {
 
   return (
     <div className="premium-panels-container">
-      <div ref={panelRefs.features}>
-        <FeaturesPanel t={t} visible={visiblePanels.features} />
-      </div>
       <div ref={panelRefs.roadmap}>
         <RoadmapPanel t={t} visible={visiblePanels.roadmap} />
+      </div>
+      <div ref={panelRefs.features}>
+        <FeaturesPanel t={t} visible={visiblePanels.features} />
       </div>
       <div ref={panelRefs.download}>
         <DownloadPanel t={t} visible={visiblePanels.download} />
