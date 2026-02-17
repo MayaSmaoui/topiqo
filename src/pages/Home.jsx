@@ -1,4 +1,6 @@
 // src/pages/Home.jsx
+import Lottie from 'lottie-react';
+import movingOnRoadmap from '../assets/moving_on_roadmap.json';
 import PremiumPanels from '../components/PremiumPanels';
 
 const HERO_TEXTS = {
@@ -9,6 +11,7 @@ const HERO_TEXTS = {
     value: "Moins cher qu'un prof particulier, plus personnalisé que les autres apps.",
     appStore: "App Store",
     playStore: "Play Store",
+    webApp: "Web App",
     comingSoon: "Bientôt"
   },
   en: {
@@ -18,6 +21,7 @@ const HERO_TEXTS = {
     value: "Cheaper than a private tutor, more personalised than other apps.",
     appStore: "App Store",
     playStore: "Play Store",
+    webApp: "Web App",
     comingSoon: "Coming Soon"
   }
 };
@@ -30,7 +34,14 @@ export default function Home({ t, lang }) {
       {/* HERO */}
       <main className="hero">
         <div className="hero-inner">
-          <img src="/assets/TopiqoWave.gif" alt="Topiqo mascot" className="topi-img" />
+          <div className="topi-lottie-wrapper">
+            <Lottie
+              animationData={movingOnRoadmap}
+              loop={true}
+              className="topi-img"
+              aria-label="Topiqo mascot"
+            />
+          </div>
           <h1>{heroText.title}</h1>
           <p className="hero-subtitle">{heroText.subtitle}</p>
           <p className="hero-body">{heroText.body}</p>
@@ -45,12 +56,17 @@ export default function Home({ t, lang }) {
               {heroText.playStore}
               <span className="coming-soon-badge">{heroText.comingSoon}</span>
             </div>
+            <div className="download-button disabled">
+              <svg className="store-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              {heroText.webApp}
+              <span className="coming-soon-badge">{heroText.comingSoon}</span>
+            </div>
           </div>
         </div>
         <div className="hero-bg" aria-hidden="true"></div>
       </main>
 
-      {/* PREMIUM PANELS SECTION - Immersive showcase like iOS app */}
+      {/* PREMIUM PANELS SECTION */}
       <PremiumPanels lang={lang === "fr" ? "fr" : "en"} />
     </>
   );

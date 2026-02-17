@@ -122,10 +122,24 @@ html, body, #root {
   padding: 3rem 0; /* léger air, mais pas de push vertical artificiel */
 }
 
+/* Lottie wrapper — centres the animation and caps its size */
+.topi-lottie-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  width: 100%;
+  max-width: 260px;          /* desktop cap */
+}
+
 .topi-img {
-  width: 170px;
+  width: 100%;
   height: auto;
-  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .topi-lottie-wrapper {
+    max-width: 180px;         /* smaller on mobile */
+  }
 }
 .hero h1 {
   font-size: 2.8rem;
@@ -325,12 +339,12 @@ html, body, #root {
     radial-gradient(900px 360px at 14% -10%, rgba(252,204,45,.12), transparent 60%),
     linear-gradient(180deg,#fffef9 0%, #f6f8fb 100%);
   border-top: 1px solid rgba(0,0,0,.06);
-  margin-top: 6rem;
+  margin-top: 0;
   color: #0d0f14;
 }
 
 .foot-wave{
-  display:block; width:100%; height:110px; margin-bottom:-2px;
+  display:block; width:100%; height:60px; margin-bottom:-2px;
 }
 .foot-wave path{ fill:#fff; }
 

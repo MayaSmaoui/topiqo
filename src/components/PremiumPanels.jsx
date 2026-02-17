@@ -1,9 +1,10 @@
 // src/components/PremiumPanels.jsx
 import { useState, useEffect, useRef } from 'react';
+import Lottie from 'lottie-react';
+import createRoadmapAnim from '../assets/creating_roadmap.json';
 import './PremiumPanels.css';
 
 // Import your video files - adjust paths as needed
-// You'll need to add these videos to your public folder or assets
 const VIDEOS = {
   graphs: '/videos2/graphs.mp4',
   pronounciation: '/videos2/pronounciation.mp4',
@@ -31,11 +32,14 @@ const TEXTS = {
       ordering: "Remets dans l'Ordre",
       matchpairs: "Relie les Paires",
     },
-    
-    // Panel 2: Roadmap
+
+    // Panel 2: Upload
+    uploadTitle: "Importe tes cours, complète le parcours, réussis ton examen.",
+    uploadValue: "Moins cher qu'un prof particulier, plus personnalisé que les autres apps.",
+
+    // Panel 3: Roadmap
     roadmapTitle: "Ton parcours personnalisé",
     roadmapSubtitle: "Progresse étape par étape avec des leçons adaptées à toi",
-    roadmapBody: "Importe tes cours, complète le parcours, réussis ton examen.",
     roadmapValue: "Moins cher qu'un prof particulier, plus personnalisé que les autres apps.",
     roadmapItems: [
       { title: "Introduction", subtitle: "Concepts de base" },
@@ -45,11 +49,12 @@ const TEXTS = {
       { title: "Révision Finale", subtitle: "Préparation examen" },
     ],
 
-    // Panel 3: Download
+    // Panel 4: Download
     downloadTitle: "Prêt à commencer ?",
     downloadSubtitle: "Télécharge Topiqo et commence à progresser dès aujourd'hui.",
     appStore: "App Store",
     playStore: "Play Store",
+    webApp: "Web App",
     comingSoon: "Bientôt",
   },
   en: {
@@ -66,11 +71,14 @@ const TEXTS = {
       ordering: "Put in Order",
       matchpairs: "Match Pairs",
     },
-    
-    // Panel 2: Roadmap
+
+    // Panel 2: Upload
+    uploadTitle: "Upload your notes, complete the roadmap, ace your exam.",
+    uploadValue: "Cheaper than a private tutor, more personalised than other apps.",
+
+    // Panel 3: Roadmap
     roadmapTitle: "Your personal learning path",
     roadmapSubtitle: "Progress step by step with lessons that adapt to you",
-    roadmapBody: "Upload your notes, complete the roadmap, ace your exam.",
     roadmapValue: "Cheaper than a private tutor, more personalised than other apps.",
     roadmapItems: [
       { title: "Introduction", subtitle: "Basic concepts" },
@@ -80,11 +88,12 @@ const TEXTS = {
       { title: "Final Review", subtitle: "Exam prep" },
     ],
 
-    // Panel 3: Download
+    // Panel 4: Download
     downloadTitle: "Ready to get started?",
     downloadSubtitle: "Download Topiqo and start making progress today.",
     appStore: "App Store",
     playStore: "Play Store",
+    webApp: "Web App",
     comingSoon: "Coming Soon",
   }
 };
@@ -160,91 +169,46 @@ function FeaturesPanel({ t, visible }) {
   const touchEndX = useRef(null);
   const slideshowRef = useRef(null);
 
-  // Auto-advance timer
   useEffect(() => {
     if (!visible) return;
-    
     const timer = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % SLIDESHOW_ITEMS.length);
     }, 4000);
-
     return () => clearInterval(timer);
-  }, [visible, currentSlide]); // Reset timer when slide changes manually
+  }, [visible, currentSlide]);
 
-  // Reset to first slide when panel becomes visible
   useEffect(() => {
-    if (visible) {
-      setCurrentSlide(0);
-    }
+    if (visible) setCurrentSlide(0);
   }, [visible]);
 
-  // Handle touch/swipe
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchMove = (e) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-
+  const handleTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+  const handleTouchMove = (e) => { touchEndX.current = e.touches[0].clientX; };
   const handleTouchEnd = () => {
     if (!touchStartX.current || !touchEndX.current) return;
-    
     const diff = touchStartX.current - touchEndX.current;
-    const minSwipeDistance = 50;
-
-    if (Math.abs(diff) > minSwipeDistance) {
-      if (diff > 0) {
-        // Swipe left - next slide
-        setCurrentSlide(prev => (prev + 1) % SLIDESHOW_ITEMS.length);
-      } else {
-        // Swipe right - previous slide
-        setCurrentSlide(prev => (prev - 1 + SLIDESHOW_ITEMS.length) % SLIDESHOW_ITEMS.length);
-      }
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) setCurrentSlide(prev => (prev + 1) % SLIDESHOW_ITEMS.length);
+      else setCurrentSlide(prev => (prev - 1 + SLIDESHOW_ITEMS.length) % SLIDESHOW_ITEMS.length);
     }
-
     touchStartX.current = null;
     touchEndX.current = null;
   };
 
-  // Handle mouse drag for desktop
   const mouseStartX = useRef(null);
   const isDragging = useRef(false);
-
-  const handleMouseDown = (e) => {
-    mouseStartX.current = e.clientX;
-    isDragging.current = true;
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging.current) return;
-    // Optional: add visual feedback during drag
-  };
-
+  const handleMouseDown = (e) => { mouseStartX.current = e.clientX; isDragging.current = true; };
+  const handleMouseMove = () => {};
   const handleMouseUp = (e) => {
     if (!isDragging.current || mouseStartX.current === null) return;
-    
     const diff = mouseStartX.current - e.clientX;
-    const minSwipeDistance = 50;
-
-    if (Math.abs(diff) > minSwipeDistance) {
-      if (diff > 0) {
-        // Drag left - next slide
-        setCurrentSlide(prev => (prev + 1) % SLIDESHOW_ITEMS.length);
-      } else {
-        // Drag right - previous slide
-        setCurrentSlide(prev => (prev - 1 + SLIDESHOW_ITEMS.length) % SLIDESHOW_ITEMS.length);
-      }
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) setCurrentSlide(prev => (prev + 1) % SLIDESHOW_ITEMS.length);
+      else setCurrentSlide(prev => (prev - 1 + SLIDESHOW_ITEMS.length) % SLIDESHOW_ITEMS.length);
     }
-
     mouseStartX.current = null;
     isDragging.current = false;
   };
-
-  const handleMouseLeave = () => {
-    isDragging.current = false;
-    mouseStartX.current = null;
-  };
+  const handleMouseLeave = () => { isDragging.current = false; mouseStartX.current = null; };
 
   return (
     <section className={`premium-panel features-panel ${visible ? 'visible' : ''}`}>
@@ -304,55 +268,100 @@ function FeaturesPanel({ t, visible }) {
   );
 }
 
-// Panel 2: Roadmap
+// Panel 2: Upload (Lottie + chips)
+function UploadPanel({ t, visible }) {
+  const [showChips, setShowChips] = useState(false);
+  const [showValue, setShowValue] = useState(false);
+
+  useEffect(() => {
+    const timeouts = [];
+    const clearAll = () => timeouts.forEach(clearTimeout);
+
+    if (visible) {
+      setShowChips(false);
+      setShowValue(false);
+      timeouts.push(setTimeout(() => setShowChips(true), 600));
+      timeouts.push(setTimeout(() => setShowValue(true), 1000));
+    } else {
+      setShowChips(false);
+      setShowValue(false);
+    }
+
+    return () => clearAll();
+  }, [visible]);
+
+  return (
+    <section className={`premium-panel upload-panel ${visible ? 'visible' : ''}`}>
+      <div className="panel-bg-circles">
+        <div className="bg-circle circle-1"></div>
+        <div className="bg-circle circle-2"></div>
+      </div>
+      
+      <div className="panel-content">
+        <h2 className="panel-title purple">{t.uploadTitle}</h2>
+
+        <div className="upload-lottie-wrapper">
+          <Lottie
+            animationData={createRoadmapAnim}
+            loop={true}
+            className="upload-lottie"
+            aria-label="Create roadmap animation"
+          />
+        </div>
+
+        <div className={`upload-chips ${showChips ? 'show' : ''}`}>
+          <div className="upload-chip"><span>📷</span> Photos</div>
+          <div className="upload-chip"><span>📄</span> PDFs</div>
+          <div className="upload-chip"><span>🎤</span> Audio</div>
+          <div className="upload-chip"><span>📊</span> PowerPoint</div>
+          <div className="upload-chip"><span>📝</span> Word</div>
+          <div className="upload-chip"><span>📈</span> Excel</div>
+          <div className="upload-chip"><span>📃</span> Text</div>
+          <div className="upload-chip"><span>💡</span> Just an idea</div>
+        </div>
+
+        <p className={`roadmap-value ${showValue ? 'show' : ''}`}>{t.uploadValue}</p>
+      </div>
+    </section>
+  );
+}
+
+// Panel 3: Roadmap (nodes only)
 function RoadmapPanel({ t, visible }) {
   const [visibleNodes, setVisibleNodes] = useState([]);
-  const [showChips, setShowChips] = useState(false);
   const [showText, setShowText] = useState(false);
 
   const items = [
-    { title: t.roadmapItems[0].title, subtitle: t.roadmapItems[0].subtitle, icon: '⚛️', status: 'completed' },
-    { title: t.roadmapItems[1].title, subtitle: t.roadmapItems[1].subtitle, icon: '💧', status: 'completed' },
-    { title: t.roadmapItems[2].title, subtitle: t.roadmapItems[2].subtitle, icon: '🧊', status: 'current' },
-    { title: t.roadmapItems[3].title, subtitle: t.roadmapItems[3].subtitle, icon: '⬡', status: 'locked' },
-    { title: t.roadmapItems[4].title, subtitle: t.roadmapItems[4].subtitle, icon: '🔥', status: 'locked' },
+    { title: t.roadmapItems[0].title, subtitle: t.roadmapItems[0].subtitle, status: 'completed' },
+    { title: t.roadmapItems[1].title, subtitle: t.roadmapItems[1].subtitle, status: 'completed' },
+    { title: t.roadmapItems[2].title, subtitle: t.roadmapItems[2].subtitle, status: 'current' },
+    { title: t.roadmapItems[3].title, subtitle: t.roadmapItems[3].subtitle, status: 'locked' },
+    { title: t.roadmapItems[4].title, subtitle: t.roadmapItems[4].subtitle, status: 'locked' },
   ];
 
-  // Offset pattern matching iOS: [0, 15, 25, 15, 0]
   const offsets = [0, 15, 25, 15, 0];
 
-  // Animate nodes one by one when panel becomes visible
   useEffect(() => {
     const timeouts = [];
-
     const clearAll = () => timeouts.forEach(clearTimeout);
 
     if (visible) {
       setVisibleNodes([]);
-      setShowChips(false);
       setShowText(false);
       
-      // Stagger node appearances
       items.forEach((_, index) => {
         timeouts.push(setTimeout(() => {
           setVisibleNodes(prev => [...prev, index]);
-        }, 400 + index * 250)); // Start after 400ms, then 250ms between each
+        }, 400 + index * 250));
       });
 
-      // Show chips after nodes
-      timeouts.push(setTimeout(() => setShowChips(true), 400 + items.length * 250 + 200));
-      
-      // Show text after chips
-      timeouts.push(setTimeout(() => setShowText(true), 400 + items.length * 250 + 500));
+      timeouts.push(setTimeout(() => setShowText(true), 400 + items.length * 250 + 300));
     } else {
       setVisibleNodes([]);
-      setShowChips(false);
       setShowText(false);
     }
 
-    return () => {
-      clearAll();
-    };
+    return () => clearAll();
   }, [visible]);
 
   return (
@@ -370,9 +379,7 @@ function RoadmapPanel({ t, visible }) {
             <div 
               key={index} 
               className={`roadmap-node ${item.status} ${visibleNodes.includes(index) ? 'show' : ''}`}
-              style={{ 
-                '--offset': `${offsets[index]}px`
-              }}
+              style={{ '--offset': `${offsets[index]}px` }}
             >
               <div className={`depth-button ${item.status}`}>
                 <div className="depth-button-shadow"></div>
@@ -404,51 +411,22 @@ function RoadmapPanel({ t, visible }) {
           ))}
         </div>
 
-        {/* Upload chips */}
-        <div className={`upload-chips ${showChips ? 'show' : ''}`}>
-          <div className="upload-chip">
-            <span>📷</span> Photos
-          </div>
-          <div className="upload-chip">
-            <span>📄</span> PDFs
-          </div>
-          <div className="upload-chip">
-            <span>🎤</span> Audio
-          </div>
-          <div className="upload-chip">
-            <span>📊</span> PowerPoint
-          </div>
-          <div className="upload-chip">
-            <span>📝</span> Word
-          </div>
-          <div className="upload-chip">
-            <span>📈</span> Excel
-          </div>
-          <div className="upload-chip">
-            <span>📃</span> Text
-          </div>
-          <div className="upload-chip">
-            <span>💡</span> Just an idea
-          </div>
-        </div>
-
-        <p className={`roadmap-body ${showText ? 'show' : ''}`}>{t.roadmapBody}</p>
         <p className={`roadmap-value ${showText ? 'show' : ''}`}>{t.roadmapValue}</p>
       </div>
     </section>
   );
 }
 
-// Panel 3: Download
+// Panel 4: Download
 function DownloadPanel({ t, visible }) {
   const [showTitle, setShowTitle] = useState(false);
   const [showSubtitle, setShowSubtitle] = useState(false);
   const [showAppStore, setShowAppStore] = useState(false);
   const [showPlayStore, setShowPlayStore] = useState(false);
+  const [showWebApp, setShowWebApp] = useState(false);
 
   useEffect(() => {
     const timeouts = [];
-
     const clearAll = () => timeouts.forEach(clearTimeout);
 
     if (visible) {
@@ -456,21 +434,22 @@ function DownloadPanel({ t, visible }) {
       setShowSubtitle(false);
       setShowAppStore(false);
       setShowPlayStore(false);
+      setShowWebApp(false);
 
       timeouts.push(setTimeout(() => setShowTitle(true), 200));
       timeouts.push(setTimeout(() => setShowSubtitle(true), 450));
       timeouts.push(setTimeout(() => setShowAppStore(true), 700));
       timeouts.push(setTimeout(() => setShowPlayStore(true), 950));
+      timeouts.push(setTimeout(() => setShowWebApp(true), 1200));
     } else {
       setShowTitle(false);
       setShowSubtitle(false);
       setShowAppStore(false);
       setShowPlayStore(false);
+      setShowWebApp(false);
     }
 
-    return () => {
-      clearAll();
-    };
+    return () => clearAll();
   }, [visible]);
 
   return (
@@ -494,6 +473,11 @@ function DownloadPanel({ t, visible }) {
             {t.playStore}
             <span className="coming-soon-badge">{t.comingSoon}</span>
           </div>
+          <div className={`download-button-large disabled download-anim ${showWebApp ? 'show' : ''}`}>
+            <svg className="store-icon-large" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            {t.webApp}
+            <span className="coming-soon-badge">{t.comingSoon}</span>
+          </div>
         </div>
       </div>
     </section>
@@ -504,14 +488,16 @@ function DownloadPanel({ t, visible }) {
 export default function PremiumPanels({ lang = 'fr' }) {
   const t = TEXTS[lang] || TEXTS.fr;
   const [visiblePanels, setVisiblePanels] = useState({
-    features: false,
+    upload: false,
     roadmap: false,
+    features: false,
     download: false,
   });
   
   const panelRefs = {
-    features: useRef(null),
+    upload: useRef(null),
     roadmap: useRef(null),
+    features: useRef(null),
     download: useRef(null),
   };
 
@@ -520,7 +506,6 @@ export default function PremiumPanels({ lang = 'fr' }) {
       (entries) => {
         entries.forEach((entry) => {
           const panelId = entry.target.dataset.panel;
-          // Set visible when entering, reset when leaving
           setVisiblePanels(prev => ({ ...prev, [panelId]: entry.isIntersecting }));
         });
       },
@@ -539,6 +524,9 @@ export default function PremiumPanels({ lang = 'fr' }) {
 
   return (
     <div className="premium-panels-container">
+      <div ref={panelRefs.upload}>
+        <UploadPanel t={t} visible={visiblePanels.upload} />
+      </div>
       <div ref={panelRefs.roadmap}>
         <RoadmapPanel t={t} visible={visiblePanels.roadmap} />
       </div>
