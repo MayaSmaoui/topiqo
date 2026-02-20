@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Lottie from 'lottie-react';
 import createRoadmapAnim from '../assets/creating_roadmap.json';
+import interactingWithPhoneAnim from '../assets/interacting_with_phone.json';
 import './PremiumPanels.css';
 
 // Import your video files - adjust paths as needed
@@ -478,6 +479,15 @@ function DownloadPanel({ t, visible }) {
             {t.webApp}
             <span className="coming-soon-badge">{t.comingSoon}</span>
           </div>
+        </div>
+
+        <div className="download-lottie-wrapper">
+          <Lottie
+            animationData={interactingWithPhoneAnim}
+            loop={true}
+            className="download-lottie"
+            aria-label="Interacting with phone animation"
+          />
         </div>
       </div>
     </section>

@@ -645,6 +645,26 @@
 }
 
 /* ======= Download Panel Animations ======= */
+.download-lottie-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto 1rem;
+  width: 100%;
+  max-width: 280px;
+}
+
+.download-lottie {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .download-lottie-wrapper {
+    max-width: 200px;
+    margin: 1.5rem auto 0.75rem;
+  }
+}
+
 .download-anim {
   opacity: 0;
   transform: translateY(20px);
@@ -663,7 +683,14 @@
 /* ======= Responsive ======= */
 @media (max-width: 768px) {
   .premium-panel {
-    padding: 1.5rem 1.25rem;
+    height: auto;
+    min-height: auto;
+    padding: 3rem 1.25rem;
+  }
+
+  .panel-content {
+    max-height: none;
+    overflow: visible;
   }
   
   .panel-title {
@@ -711,7 +738,7 @@
 
 @media (max-width: 480px) {
   .premium-panel {
-    padding: 1rem 1rem;
+    padding: 2.5rem 1rem;
   }
 
   .phone-mockup {
