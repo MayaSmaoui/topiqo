@@ -457,7 +457,6 @@ function DownloadPanel({ t, visible }) {
   return (
     <section className={`premium-panel download-panel ${visible ? 'visible' : ''}`}>
       <div className="panel-content" style={{ opacity: 1, transform: 'none' }}>
-        <h2 className={`panel-title purple download-anim ${showTitle ? 'show' : ''}`}>{t.downloadTitle}</h2>
 
         <div className="download-lottie-wrapper">
           <Lottie
@@ -467,6 +466,8 @@ function DownloadPanel({ t, visible }) {
             aria-label="Superhero animation"
           />
         </div>
+        
+        <h2 className={`panel-title purple download-anim ${showTitle ? 'show' : ''}`}>{t.downloadTitle}</h2>
 
         <p className={`panel-subtitle download-anim ${showSubtitle ? 'show' : ''}`}>{t.downloadSubtitle}</p>
         
