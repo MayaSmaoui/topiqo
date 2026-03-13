@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import Lottie from 'lottie-react';
 import createRoadmapAnim from '../assets/creating_roadmap.json';
 import interactingWithPhoneAnim from '../assets/interacting_with_phone.json';
+import superheroAnim from '../assets/superhero.json';
 import './PremiumPanels.css';
 
 // Import your video files - adjust paths as needed
@@ -457,6 +458,16 @@ function DownloadPanel({ t, visible }) {
     <section className={`premium-panel download-panel ${visible ? 'visible' : ''}`}>
       <div className="panel-content" style={{ opacity: 1, transform: 'none' }}>
         <h2 className={`panel-title purple download-anim ${showTitle ? 'show' : ''}`}>{t.downloadTitle}</h2>
+
+        <div className="download-lottie-wrapper">
+          <Lottie
+            animationData={superheroAnim}
+            loop={true}
+            className="download-lottie"
+            aria-label="Superhero animation"
+          />
+        </div>
+
         <p className={`panel-subtitle download-anim ${showSubtitle ? 'show' : ''}`}>{t.downloadSubtitle}</p>
         
         <div className="download-buttons-vertical">
